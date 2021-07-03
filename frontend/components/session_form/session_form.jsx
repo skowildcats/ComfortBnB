@@ -49,7 +49,15 @@ class SessionForm extends React.Component {
             onChange={this.update('lname')}
           />
         </label>
+        <br />
+        <label>Email:
+          <input type="text"
+            value={this.state.email}
+            onChange={this.update('email')}
+          />
+        </label>
         </div>
+        
     }
     let formRender
     if (!this.props.currentUser) {

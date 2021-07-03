@@ -7,7 +7,7 @@ import SessionForm from './session_form';
 const mapStateToProps = ({ session, entities: { users }, errors }) => {
   return {
     currentUser: users[session.id],
-    formContent: {fname: "", lname: "", username: "", password: ""},
+    formContent: {fname: "", lname: "", email: "", username: "", password: ""},
     errors: errors.session,
     formType: 'signup',
     navLink: <Link to="/login">log in instead</Link>,
