@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+#root {
+  display: flex;
+}
+/* h1, a, nav {
+  text-decoration: none;
+  color: bisque;
+} */
+
+.splash-header {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+} 
+
+/* .login-form-box {
+  display: flex ;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.header-link {
+  flex-grow: 1;
+}
+.login-signup {
+  flex-grow: 1;
+} */
+
