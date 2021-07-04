@@ -75,8 +75,11 @@ class Splash extends React.Component {
           <div id="session-modal" className="session-modal">
             <section className="modal-screen">
               <div className="modal-form">
-                <button onClick={this.closeModal} className="close-modal">&times;</button>
-                {this.state.formType === "login" ? <LogInFormContainer /> : <SignUpFormContainer/>}
+                <div className="modal-header">
+                  <button onClick={this.closeModal} className="close-modal">&times;</button>
+                  <p className="modal-form-text">Log in or sign up</p>
+                </div>
+              {this.state.formType === "login" ? <LogInFormContainer /> : <SignUpFormContainer/>}
               </div>
             </section>
           </div>

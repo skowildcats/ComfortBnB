@@ -38,56 +38,53 @@ class SessionForm extends React.Component {
     let nameContainer
     if (this.props.formType === "signup") {
       nameContainer = 
-      <div>
-        <label>First name:
+        <>
           <input type="text"
             value={this.state.fname}
             onChange={this.update('fname')}
+            placeholder="First Name"
           />
-        </label>
         <br />
-        <label>Last name:
           <input type="text"
-            value={this.state.lname}
-            onChange={this.update('lname')}
+          value={this.state.lname}
+          onChange={this.update('lname')}
+            placeholder="Last Name"
           />
-        </label>
         <br />
-        <label>Email:
           <input type="text"
             value={this.state.email}
             onChange={this.update('email')}
+            placeholder="Email"
           />
-        </label>
-        </div>
-        
+        </>
     }
     let formRender
     if (!this.props.currentUser) {
       formRender = <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to ComfortBnB!
+        <p>Welcome to ComfortBnB</p>
           <br />
-          Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
           <div className="login-form">
             {nameContainer}
-            <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="Username"
               />
-            </label>
             <br />
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
-            </label>
             <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input type="submit"
+              value={this.props.formType}
+            />
+            Please {this.props.formType} or {this.props.navLink}
+            <br />
           </div>
         </form>
     } 
