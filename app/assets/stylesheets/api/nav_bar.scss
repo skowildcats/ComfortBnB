@@ -3,6 +3,8 @@
   justify-content: space-between;
   flex-grow: 1;
   padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative
 } 
 
 .nav-bar > * > * {
@@ -65,7 +67,7 @@
 }
 
 .profile-dropdown {
-  margin-right: 40px;
+  margin-right: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -79,3 +81,11 @@
   margin-top: 2%;
   background-color: inherit;
 }
+
+.profile-dropdown-items {
+  display: none;
+  margin-top: 30px;
+  flex-direction: column;
+  position: absolute  ;
+}
+

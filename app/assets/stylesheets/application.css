@@ -18,10 +18,35 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-image: url(splash-background.jpeg);
+  background-image: url(splash-dark.jpeg);
   background-size: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed
 }
 
+@media only screen and (max-width: 1200px) {
+  body {
+    background-size: 100vw 90vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-size: 100vw 85vh;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-size: 100vw 80vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100vw 75vh;
+  }
+}
 
 
 .search-bar {

@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     document.getElementById('session-modal').style.display = 'none'
+    document.getElementById('profile-dropdown-items').style.display = "none"
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
