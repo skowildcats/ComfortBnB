@@ -52,13 +52,14 @@ class Splash extends React.Component {
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
+        <button>Reservations</button>
         <button className="header-button" onClick={this.logoutUser.bind(this)}>Log Out</button>
       </div>
     } else {
       userIcon = <i className="profile-icon far fa-user"></i>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
-        <button onClick={this.modal.bind(this)} value="login" >Login</button>
-        <button onClick={this.modal.bind(this)} value="signup">Sign up!</button>
+        <button className="login-button" onClick={this.modal.bind(this)} value="login" >Log in</button>
+        <button onClick={this.modal.bind(this)} value="signup">Sign up</button>
       </div>
     }
 

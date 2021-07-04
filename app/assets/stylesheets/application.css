@@ -17,8 +17,10 @@
 
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-image: url(splash-dark.jpeg);
+  font-family: 'Montserrat', sans-serif; 
+  background-image: url(splash-background.jpeg); 
+  background-color: grey;
+  /* https://unsplash.com/photos/cYrMQA7a3Wc */
   background-size: 100vw;
   background-repeat: no-repeat;
   background-attachment: fixed

@@ -14,7 +14,7 @@
 
 .home-link {
   font-weight: bold;
-  padding-left: 40px;
+  padding-left: 60px;
   margin-top: 30px;
 }
 
@@ -38,10 +38,10 @@
   background-color:inherit;
   border: 1px solid lightgray; 
   border-radius: 21px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: -7px;
   display: flex;
   color: grey;
@@ -61,15 +61,17 @@
   font-size: 20px;
   border: 0;
   padding: 0;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 2%;
   background-color: inherit;
 }
 
 .profile-dropdown {
-  margin-right: 25px;
+  margin-right: 70px;
   display: flex;
+  // float: left;
   flex-direction: column;
+  justify-content: right;
 }
 
 .profile-name {
@@ -78,14 +80,43 @@
   border: 0;
   padding: 0;
   margin-left: 10px;
-  margin-top: 2%;
+  margin-top: 1%;
   background-color: inherit;
 }
 
 .profile-dropdown-items {
   display: none;
-  margin-top: 30px;
+  margin-top: 45px;
+  margin-right: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-self: right;
   flex-direction: column;
-  position: absolute  ;
+  position: absolute;
+  right: 0;
+  background-color: white;  
+  border-radius: 15px;
+  // justify-content: left;
+}
+
+.profile-dropdown-items button {
+  border: 0;
+  background-color: transparent;
+  width: inherit;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  width: 225px;
+  font-size: 70%;
+  text-align: left;
+}
+
+.profile-dropdown-items button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.login-button {
+  font-weight: bold ;
 }
 
