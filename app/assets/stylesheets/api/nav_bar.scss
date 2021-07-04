@@ -17,24 +17,24 @@
 }
 
 .home-link:link{
-  color:black;
+  color:white;
 }
 .home-link:visited{
-  color:black;
+  color:white;
 }
 .home-link:hover{
-  color:black;
+  color:white;
 }
 .home-link:focus{
-  color:black;
+  color:white;
 }
 .home-link:active{
-  color:black;
+  color:white;
 }
 
 .profile-list-icon {
   background-color:inherit;
-  border: 1px solid gray; 
+  border: 1px solid lightgray; 
   border-radius: 21px;
   padding-left: 15px;
   padding-right: 15px;
@@ -42,6 +42,8 @@
   padding-bottom: 5px;
   margin-top: -7px;
   display: flex;
+  color: grey;
+  background-color: white;
 }
 
 .profile-list-icon:hover {

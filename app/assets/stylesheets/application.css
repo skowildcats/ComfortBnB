@@ -15,8 +15,11 @@
  */
 
 
+
 body {
   font-family: 'Montserrat', sans-serif;
+  background-image: url(splash-background.jpeg);
+  background-size: 100vw;
 }
 
 
