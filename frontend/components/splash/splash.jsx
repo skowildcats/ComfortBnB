@@ -6,20 +6,35 @@ import SignUpFormContainer from "../session_form/signup_form_container"
 
 
 class Splash extends React.Component {
-
+  
   constructor(props) {
     super(props)
     this.state = {formType: null}
   }
 
+  modalEvent(e) {
+    if (!e.target.closest(".modal-form")) {
+      document.getElementById('session-modal').style.display = 'none'
+      document.querySelector('.modal-screen').removeEventListener("click", this.modalEvent)
+    }
+  }
+
   modal(e) {
     document.getElementById('session-modal').style.display = 'block'
     document.getElementById('profile-dropdown-items').style.display = "none"
-    this.setState({formType: e.target.value})
+    this.setState({formType: e.target.value}) 
+    document.querySelector('.modal-screen').addEventListener("click", this.modalEvent)
   }
 
   closeModal() {
     document.getElementById('session-modal').style.display = 'none'
+    // debugger
+    // document.querySelector('.modal-screen').removeListeners()
+  }
+
+  logoutUser() {
+    this.props.logout()
+    document.getElementById('profile-dropdown-items').style.display = "none"
   }
 
   toggleDropDown() {
@@ -37,7 +52,7 @@ class Splash extends React.Component {
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
-        <button className="header-button" onClick={logout}>Log Out</button>
+        <button className="header-button" onClick={this.logoutUser.bind(this)}>Log Out</button>
       </div>
     } else {
       userIcon = <i className="profile-icon far fa-user"></i>
@@ -73,7 +88,7 @@ class Splash extends React.Component {
           </div>
 
         </nav>
-      </div>
+      </div>  
       <div className="search-bar">Search Bar Placeholder</div>
       </>
   );
