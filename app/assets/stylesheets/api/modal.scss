@@ -23,7 +23,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal-form{
@@ -67,8 +67,6 @@
   border-bottom: 1px solid lightgray;
 }
 
-
-
 .login-form input[type=text], .login-form input[type=password]{
   width: 100%;
   padding: 18px 18px;
@@ -79,11 +77,11 @@
 
 .login-form input[type=submit] {
   width: 100%;
-  padding: 15px 15px;
   border: 1px solid gray;
   border-radius: 8px;
-  padding: 16px 16px;
-  font-size: 125%;
+  margin-bottom: 5px;
+  padding: 12px 12px;
+  font-size: 100%;
   font-weight: bold;
   color: white;
   text-transform: capitalize;
@@ -99,6 +97,33 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: -10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
+.modal-session-check {
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  font-size: 15px;
+  margin-left: 50px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.modal-session-check:hover, .demo-user:hover, .login-form input[type=submit]:hover{
+  cursor: pointer;
+}
+
+.demo-user {
+  border: 0;
+  padding: 12px;
+  background-color: inherit;
+  font-size: 15px;
+  width: 84%;
+  margin-left: 45px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  color: white;
+  background-image: linear-gradient(to right, #e51f4e, #d60567);
+  margin-top: 30px;
+}

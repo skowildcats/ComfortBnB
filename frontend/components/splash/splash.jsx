@@ -37,17 +37,30 @@ class Splash extends React.Component {
     document.getElementById('profile-dropdown-items').style.display = "none"
   }
 
+  dropDownEvent(e) {
+    if (!e.target.closest(".profile-dropdown-items") && !e.target.closest(".profile-list-icon")) {
+      document.querySelector(".profile-dropdown-items").style.display = 'none'
+      document.removeEventListener("click", this.dropDownEvent)
+    }
+  }
+
   toggleDropDown() {
     if (document.getElementById('profile-dropdown-items').style.display !== "flex") {
       document.getElementById('profile-dropdown-items').style.display = "flex"
+      document.addEventListener("click", this.dropDownEvent)
     } else {
       document.getElementById('profile-dropdown-items').style.display = "none"
+      document.removeEventListener("click", this.dropDownEvent)
     }
+  }
+
+  toggleForm() {
+    this.state.formType === "login" ? this.setState({ formType: "signup" }) : this.setState({ formType: "login" })
   }
 
   render() {
     const {currentUser, logout} = this.props
-    let userIcon, profileItems
+    let userIcon, profileItems, sessionItems
 
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
@@ -63,6 +76,19 @@ class Splash extends React.Component {
       </div>
     }
 
+    if (this.state.formType === "login") {
+      sessionItems = <>
+      <LogInFormContainer />
+        <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Create account </button>
+        <br />
+        <button className="demo-user"> Demo User </button>
+      </>
+    } else {
+      sessionItems = <>
+        <SignUpFormContainer />
+        <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Log in instead</button>
+      </>
+    }
     const splashPage = () => (
       <>
       <div className="nav-bar">
@@ -79,12 +105,13 @@ class Splash extends React.Component {
                   <button onClick={this.closeModal} className="close-modal">&times;</button>
                   <p className="modal-form-text">Log in or sign up</p>
                 </div>
-              {this.state.formType === "login" ? <LogInFormContainer /> : <SignUpFormContainer/>}
+                {sessionItems}
               </div>
+
             </section>
           </div>
           <div className="profile-dropdown">
-            <button onClick={this.toggleDropDown} className="profile-list-icon">
+            <button onClick={this.toggleDropDown.bind(this)} className="profile-list-icon">
               <i className="profile-list fas fa-bars"></i>
               {userIcon}
             </button>

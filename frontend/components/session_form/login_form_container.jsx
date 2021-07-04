@@ -9,8 +9,8 @@ const mapStateToProps = ({ session, entities: { users }, errors }) => {
     currentUser: users[session.id],
     formContent: { username: "", password: "" },
     errors: errors.session,
-    formType: 'login',
-    navLink: <Link to="/signup">sign up instead</Link>,
+    formType: 'log in',
+    navLink: <Link to="/signup">Create an account </Link>,
   };
 };
 

@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
 
   render() {
     let nameContainer
-    if (this.props.formType === "signup") {
+    if (this.props.formType === "sign up") {
       nameContainer = 
         <>
           <input type="text"
@@ -83,7 +83,7 @@ class SessionForm extends React.Component {
             <input type="submit"
               value={this.props.formType}
             />
-            Please {this.props.formType} or {this.props.navLink}
+            {/* Please {this.props.formType} or {this.props.navLink} */}
             <br />
           </div>
         </form>

@@ -8,8 +8,6 @@ const App = () => (
   <>
     <SplashContainer />
     <Switch>
-      <Route path="/login" component={LogInFormContainer} />
-      <Route path="/signup" component={SignUpFormContainer} />
     </Switch>
   </>
 );
