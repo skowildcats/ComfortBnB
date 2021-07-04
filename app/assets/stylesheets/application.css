@@ -15,37 +15,11 @@
  */
 
 
-/* h1, a, nav {
-  text-decoration: none;
-  color: bisque;
-} */
-
-.splash-header {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-} 
-
-.splash-header > * > * {
-  font-size: 10px;
-  text-decoration: none;
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.header-link:link{
-  color:black;
-}
-.header-link:visited{
-  color:black;
-}
-.header-link:hover{
-  color:black;
-}
-.header-link:focus{
-  color:black;
-}
-.header-link:active{
-  color:black;
-}
+
 
 .search-bar {
   text-align: center;
@@ -62,27 +36,4 @@
 
 
 
-#session-modal {
-  display: none ;
-}
 
-.modal-screen{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* z-index: 2; */
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.modal-form{
-    position: absolute;
-    width: 35%;
-    height: 60%;
-    /* min-width: 500px; */
-    z-index: 3;
-    top: 20%;
-    left: 35%;
-    background: whitesmoke;
-}

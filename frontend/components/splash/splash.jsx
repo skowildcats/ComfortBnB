@@ -22,30 +22,38 @@ class Splash extends React.Component {
 
   render() {
     const {currentUser, logout} = this.props
+    let userIcon
+
+    if (currentUser) {
+      userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
+    } else {
+      userIcon = <i className="profile-icon far fa-user"></i>
+    }
 
     const sessionLinks = () => (
     <nav className="login-signup">
       <div id="session-modal" className="session-modal">
-        <section className="modal-screen"></section>
-        <div className="modal-form">
-          <button onClick= {this.closeModal}>&times;</button>
-          {this.state.formType === "login" ? <LogInFormContainer /> : <SignUpFormContainer/>}
-        </div>
+        <section className="modal-screen">
+          <div className="modal-form">
+            <button onClick= {this.closeModal} className="close-modal">&times;</button>
+            {this.state.formType === "login" ? <LogInFormContainer /> : <SignUpFormContainer/>}
+          </div>
+        </section>
       </div>
-      <button onClick={this.modal.bind(this)} value="login" >Login</button>
-      <button onClick={this.modal.bind(this)} value="signup">Sign up!</button>
+      <div className="profile-dropdown">
+        <button className="profile-list-icon">
+          <i className="profile-list fas fa-bars"></i>
+          {userIcon}
+        </button>
+        <button onClick={this.modal.bind(this)} value="login" >Login</button>
+        <button onClick={this.modal.bind(this)} value="signup">Sign up!</button>
+      </div>
+
+      <button className="header-button" onClick={logout}>Log Out</button>
     </nav>
   );
 
-
-  const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.fname}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-  );
-
-  return currentUser ? personalGreeting() : sessionLinks();
+  return sessionLinks()
   }
 };
 
