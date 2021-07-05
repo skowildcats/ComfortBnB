@@ -50,6 +50,7 @@
 
 .profile-list-icon:hover {
   cursor: pointer;
+  box-shadow: -2px 2px 6px lightgray;
 }
 
 .profile-list {
@@ -141,7 +142,12 @@
   justify-content: space-between;
 }
 
-.nav-search:hover, .nav-search-icon:hover{
+.nav-search:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 6px lightgray;
+}
+
+.nav-search-icon:hover {
   cursor: pointer;
 }
 

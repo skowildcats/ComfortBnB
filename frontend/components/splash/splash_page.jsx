@@ -8,6 +8,7 @@ class SplashPage extends React.Component {
       
       <div className="splash-page">
         <SplashNavContainer />
+        
         <div className="splash-body">
           Body Text
         </div>

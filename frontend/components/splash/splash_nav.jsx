@@ -16,10 +16,8 @@ class SplashNav extends React.Component {
 
   scrollFunc() {
     window.onscroll = function () {
-      let base = 70
       if ($(".nav-full-search").css("display") !== "none") {
-        let newBase = $(window).scrollTop()
-        if (newBase > base) {
+        if ($(window).scrollTop() > 70) {
           $(".nav-full-search").css("display", "none")
         }
       }
@@ -58,9 +56,18 @@ class SplashNav extends React.Component {
     document.getElementById('session-modal').style.display = 'none'
   }
 
+  searchEvent(e) {
+    if (!e.target.closest(".nav-full-search") && !e.target.closest(".nav-search")) {
+      document.querySelector(".nav-search").style.display = 'flex'
+      document.querySelector(".nav-full-search").style.display = 'none'
+      document.removeEventListener("click", this.searchEvent)
+    }
+  }
+
   openSearch() {
     document.querySelector(".nav-search").style.display = 'none'
     document.querySelector(".nav-full-search").style.display = 'block'
+    document.addEventListener("click", this.searchEvent)
   }
 
   logoutUser() {
@@ -128,7 +135,7 @@ class SplashNav extends React.Component {
               ComfortBnB
             </Link>
           </header>
-          <div onClick={this.openSearch} className="nav-search">
+          <div onClick={this.openSearch.bind(this)} className="nav-search">
             <div>Start your search</div>
             <button className="nav-search-icon">
               <i className="fas fa-search"></i>

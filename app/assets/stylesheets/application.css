@@ -23,7 +23,7 @@ body {
   background-color: white;
   background-image: url('splash-background.jpeg'); 
   /* https://unsplash.com/photos/cYrMQA7a3Wc */
-  background-size: 100vw 90vh;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
   background-attachment: local;
   /* background-position: center; */
