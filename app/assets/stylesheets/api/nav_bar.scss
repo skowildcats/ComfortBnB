@@ -2,21 +2,19 @@
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
+  width: 100%;
   padding-top: 20px;
-  padding-bottom: 20px;
-  position: relative
+  padding-bottom: 4px;
+  position: fixed;
 } 
-
-.nav-bar > * > * {
-  font-size: 20px;
-  text-decoration: none;
-  letter-spacing: -1px;
-}
 
 .home-link {
   font-weight: bold;
   padding-left: 60px;
   margin-top: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: -1px;
 }
 
 .home-link:link{
@@ -47,6 +45,7 @@
   display: flex;
   color: grey;
   background-color: white;
+  align-self: flex-end;
 }
 
 .profile-list-icon:hover {
@@ -120,5 +119,47 @@
 
 .login-button {
   font-weight: bold ;
+}
+
+.nav-search-form {
+  display: flex;
+}
+
+.nav-search{
+  display: none;
+  margin-top: -6px;
+  outline: none;
+  padding: 8px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 72px;
+  margin-bottom: 11px;
+  width: 300px;
+  text-align: left;
+  margin-left: -20px;
+  justify-content: space-between;
+}
+
+.nav-search i {
+  color: white;
+  font-size: 80%;
+}
+
+.nav-search div {
+  margin-top: 4px;
+  font-weight: bold;
+  margin-left: 15px;
+  font-size: 75%;
+}
+
+.nav-search-icon {
+  border: 0;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  border-radius: 50%;
+  background-color: #fe385c;
+  margin-right: 0px;
 }
 

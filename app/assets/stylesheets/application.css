@@ -17,13 +17,16 @@
 
 
 body {
+  margin: 0;
   font-family: 'Montserrat', sans-serif; 
+
+  background-color: white;
   background-image: url(splash-background.jpeg); 
-  background-color: grey;
   /* https://unsplash.com/photos/cYrMQA7a3Wc */
-  background-size: 100vw;
+  background-size: 100vw 90vh;
   background-repeat: no-repeat;
-  background-attachment: fixed
+  background-attachment: local;
+  /* background-position: center; */
 }
 
 @media only screen and (max-width: 1200px) {
@@ -34,7 +37,7 @@ body {
 
 @media only screen and (max-width: 1000px) {
   body {
-    background-size: 100vw 85vh;
+    background-size: 100vw 90vh;
   }
 }
 
@@ -48,11 +51,6 @@ body {
   body {
     background-size: 100vw 75vh;
   }
-}
-
-
-.search-bar {
-  text-align: center;
 }
 
 * {

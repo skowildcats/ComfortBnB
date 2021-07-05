@@ -5,7 +5,26 @@ import SignUpFormContainer from "../session_form/signup_form_container"
 
 
 
-class Splash extends React.Component {
+class SplashNav extends React.Component {
+  componentDidMount() {
+    this.scrollFunc()
+  }
+
+  scrollFunc() {
+    window.onscroll = function() {
+    if ($(window).scrollTop() >= 70) {
+      $(".nav-bar").css("background-color", "white")
+      $(".home-link").css("color", "#fe385c")
+      $(".nav-search").css("display", "flex")
+      $(".nav-search-icon").css("display", "block")
+    } else {
+      $(".nav-bar").css("background-color", "transparent")
+      $(".home-link").css("color", "white")
+      $(".nav-search").css("display", "none")
+      $(".nav-search-icon").css("display", "none")
+    }
+    }
+  }
   
   constructor(props) {
     super(props)
@@ -90,26 +109,32 @@ class Splash extends React.Component {
       </>
     }
     const splashPage = () => (
-      <>
-      <div className="nav-bar">
-        <header>
-          <Link to="/" className="home-link">
-            ComfortBnB
-          </Link>
-        </header>
-        <nav className="login-signup">
-          <div id="session-modal" className="session-modal">
-            <section className="modal-screen">
-              <div className="modal-form">
-                <div className="modal-header">
-                  <button onClick={this.closeModal} className="close-modal">&times;</button>
-                  <p className="modal-form-text">Log in or sign up</p>
-                </div>
-                {sessionItems}
-              </div>
-
-            </section>
+      <div className="splash-nav">
+        <div className="nav-bar">
+          <header>
+            <Link to="/" className="home-link">
+              ComfortBnB
+            </Link>
+          </header>
+          <div className="nav-search">
+            <div>Start your search</div>
+            <button className="nav-search-icon">
+              <i className="fas fa-search"></i>
+            </button>
           </div>
+          <nav className="login-signup">
+            <div id="session-modal" className="session-modal">
+              <section className="modal-screen">
+                <div className="modal-form">
+                  <div className="modal-header">
+                    <button onClick={this.closeModal} className="close-modal">&times;</button>
+                    <p className="modal-form-text">Log in or sign up</p>
+                  </div>
+                  {sessionItems}
+                </div>
+
+              </section>
+            </div>
           <div className="profile-dropdown">
             <button onClick={this.toggleDropDown.bind(this)} className="profile-list-icon">
               <i className="profile-list fas fa-bars"></i>
@@ -117,37 +142,36 @@ class Splash extends React.Component {
             </button>
             {profileItems }
           </div>
-
-        </nav>
-      </div>  
-      <form className="search-bar">
-        <div className="search-location">  
-          <h3> Location
-            <br />
-            <input type="text" placeholder="Where are you going?"/>
-          </h3>
-        </div>
-        <div className="search-check-in">
-          <h3>Check in
-            <br />
-            <input type="date" placeholder="Add dates" />
-          </h3>
-        </div>
-        <div className="search-check-out">
-          <h3>Check out
-            <br />
-            <input type="date" placeholder="Add dates" />
-          </h3>
-        </div>
-        <div className="search-guests">
-          <h3>Guest
-            <br />
-            <input placeholder="Add guests" disabled="disable" />
-          </h3>
-        </div>
-        <button className="search-submit"><i className="fas fa-search"></i></button>
-    </form>
-      </>
+          </nav>
+        </div>  
+        <form className="search-bar">
+          <div className="search-location">  
+            <h3> Location
+              <br />
+              <input type="text" placeholder="Where are you going?"/>
+            </h3>
+          </div>
+          <div className="search-check-in">
+            <h3>Check in
+              <br />
+              <input type="date" placeholder="Add dates" />
+            </h3>
+          </div>
+          <div className="search-check-out">
+            <h3>Check out
+              <br />
+              <input type="date" placeholder="Add dates" />
+            </h3>
+          </div>
+          <div className="search-guests">
+            <h3>Guest
+              <br />
+              <input placeholder="Add guests" disabled="disable" />
+            </h3>
+          </div>
+          <button className="search-submit"><i className="fas fa-search"></i></button>
+      </form>
+    </div>
   );
 
   return splashPage()
@@ -155,4 +179,4 @@ class Splash extends React.Component {
 };
 
 
-export default Splash;
+export default SplashNav;
