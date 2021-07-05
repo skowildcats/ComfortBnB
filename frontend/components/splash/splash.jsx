@@ -120,7 +120,33 @@ class Splash extends React.Component {
 
         </nav>
       </div>  
-      <div className="search-bar">Search Bar Placeholder</div>
+      <form className="search-bar">
+        <div className="search-location">  
+          <h3> Location
+            <br />
+            <input placeholder="Where are you going?" disabled="disable" />
+          </h3>
+        </div>
+        <div className="search-check-in">
+          <h3>Check in
+            <br />
+            <input placeholder="Add dates" disabled="disable" />
+          </h3>
+        </div>
+        <div className="search-check-out">
+          <h3>Check out
+            <br />
+            <input placeholder="Add dates" disabled="disable" />
+          </h3>
+        </div>
+        <div className="search-guests">
+          <h3>Guest
+            <br />
+            <input placeholder="Add guests" disabled="disable" />
+          </h3>
+        </div>
+        <button className="search-submit"><i className="fas fa-search"></i></button>
+    </form>
       </>
   );
 
