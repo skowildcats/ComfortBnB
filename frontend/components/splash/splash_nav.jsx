@@ -17,7 +17,6 @@ class SplashNav extends React.Component {
   scrollFunc() {
     window.onscroll = function () {
       let base = 70
-      console.log(base)
       if ($(".nav-full-search").css("display") !== "none") {
         let newBase = $(window).scrollTop()
         if (newBase > base) {
@@ -42,6 +41,7 @@ class SplashNav extends React.Component {
 
   modalEvent(e) {
     if (!e.target.closest(".modal-form")) {
+      document.getElementById('errors').style.display = "none"
       document.getElementById('session-modal').style.display = 'none'
       document.querySelector('.modal-screen').removeEventListener("click", this.modalEvent)
     }

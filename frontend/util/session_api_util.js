@@ -2,7 +2,13 @@ export const login = user => (
   $.ajax({
     method: 'POST',
     url: '/api/session',
-    data: { user, authenticity_token: $('[name="csrf-token"]')[0].content,  }
+    data: { user, authenticity_token: $('[name="csrf-token"]')[0].content,  },
+    success: function () {
+      $("#session-modal").css("display", "none")
+    },
+    error: function() {
+      $('#errors').css("display", "block")
+    }
   })
 );
 
@@ -10,7 +16,13 @@ export const signup = user => (
   $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: { user, authenticity_token: $('[name="csrf-token"]')[0].content,  }
+    data: { user, authenticity_token: $('[name="csrf-token"]')[0].content,  },
+    success: function () {
+      $("#session-modal").css("display", "none")
+    },
+    error: function () {
+      $('#errors').css("display", "block")
+    }
   })
 );
 

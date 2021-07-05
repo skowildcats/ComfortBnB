@@ -15,8 +15,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    document.getElementById('session-modal').style.display = 'none'
-    document.getElementById('profile-dropdown-items').style.display = "none"
+    // document.getElementById('session-modal').style.display = 'none'
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.setState(this.props.formContent)
@@ -63,7 +62,9 @@ class SessionForm extends React.Component {
       formRender = <form onSubmit={this.handleSubmit} className="login-form-box">
         <p>Welcome to ComfortBnB</p>
           <br />
-          {this.renderErrors()}
+          <div id="errors">
+            {this.renderErrors()}
+          </div>
           <div className="login-form">
             {nameContainer}
               <input type="text"
@@ -83,7 +84,6 @@ class SessionForm extends React.Component {
             <input type="submit"
               value={this.props.formType}
             />
-            {/* Please {this.props.formType} or {this.props.navLink} */}
             <br />
           </div>
         </form>

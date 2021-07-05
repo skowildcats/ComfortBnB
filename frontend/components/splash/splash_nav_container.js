@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import SplashNav from './splash_nav';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ({ session, entities: { users }, errors }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    errors: errors.session,
   };
 };
 
