@@ -124,19 +124,19 @@ class Splash extends React.Component {
         <div className="search-location">  
           <h3> Location
             <br />
-            <input type="text" placeholder="Where are you going?" disabled="disable" />
+            <input type="text" placeholder="Where are you going?"/>
           </h3>
         </div>
         <div className="search-check-in">
           <h3>Check in
             <br />
-            <input type="datetime" placeholder="Add dates" />
+            <input type="date" placeholder="Add dates" />
           </h3>
         </div>
         <div className="search-check-out">
           <h3>Check out
             <br />
-            <input placeholder="Add dates" disabled="disable" />
+            <input type="date" placeholder="Add dates" />
           </h3>
         </div>
         <div className="search-guests">
