@@ -140,6 +140,10 @@
   justify-content: space-between;
 }
 
+.nav-search:hover, .nav-search-icon:hover{
+  cursor: pointer;
+}
+
 .nav-search i {
   color: white;
   font-size: 80%;
@@ -163,3 +167,8 @@
   margin-right: 0px;
 }
 
+.nav-full-search {
+  display: none;
+  margin-bottom: 11px;
+  margin-top: -35px;
+}

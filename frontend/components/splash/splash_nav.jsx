@@ -2,33 +2,42 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogInFormContainer from "../session_form/login_form_container"
 import SignUpFormContainer from "../session_form/signup_form_container"
+import SearchBar from './search_bar';
 
 
 
 class SplashNav extends React.Component {
-  componentDidMount() {
-    this.scrollFunc()
-  }
-
-  scrollFunc() {
-    window.onscroll = function() {
-    if ($(window).scrollTop() >= 70) {
-      $(".nav-bar").css("background-color", "white")
-      $(".home-link").css("color", "#fe385c")
-      $(".nav-search").css("display", "flex")
-      $(".nav-search-icon").css("display", "block")
-    } else {
-      $(".nav-bar").css("background-color", "transparent")
-      $(".home-link").css("color", "white")
-      $(".nav-search").css("display", "none")
-      $(".nav-search-icon").css("display", "none")
-    }
-    }
-  }
   
   constructor(props) {
     super(props)
     this.state = {formType: null}
+    this.scrollFunc()
+  }
+
+  scrollFunc() {
+    window.onscroll = function () {
+      let base = 70
+      console.log(base)
+      if ($(".nav-full-search").css("display") !== "none") {
+        let newBase = $(window).scrollTop()
+        if (newBase > base) {
+          $(".nav-full-search").css("display", "none")
+        }
+      }
+      if ($(window).scrollTop() >= 70) {
+        $(".nav-bar").css("background-color", "white")
+        $(".home-link").css("color", "#fe385c")
+        if ($(".nav-full-search").css("display") === "none") {
+          $(".nav-search").css("display", "flex")
+          $(".nav-search-icon").css("display", "block")
+        }
+      } else {
+        $(".nav-bar").css("background-color", "transparent")
+        $(".home-link").css("color", "white")
+        $(".nav-search").css("display", "none")
+        $(".nav-search-icon").css("display", "none")
+      }
+    }
   }
 
   modalEvent(e) {
@@ -47,8 +56,11 @@ class SplashNav extends React.Component {
 
   closeModal() {
     document.getElementById('session-modal').style.display = 'none'
-    // debugger
-    // document.querySelector('.modal-screen').removeListeners()
+  }
+
+  openSearch() {
+    document.querySelector(".nav-search").style.display = 'none'
+    document.querySelector(".nav-full-search").style.display = 'block'
   }
 
   logoutUser() {
@@ -116,11 +128,14 @@ class SplashNav extends React.Component {
               ComfortBnB
             </Link>
           </header>
-          <div className="nav-search">
+          <div onClick={this.openSearch} className="nav-search">
             <div>Start your search</div>
             <button className="nav-search-icon">
               <i className="fas fa-search"></i>
             </button>
+          </div>
+          <div className="nav-full-search">
+            <SearchBar />
           </div>
           <nav className="login-signup">
             <div id="session-modal" className="session-modal">
@@ -144,33 +159,7 @@ class SplashNav extends React.Component {
           </div>
           </nav>
         </div>  
-        <form className="search-bar">
-          <div className="search-location">  
-            <h3> Location
-              <br />
-              <input type="text" placeholder="Where are you going?"/>
-            </h3>
-          </div>
-          <div className="search-check-in">
-            <h3>Check in
-              <br />
-              <input type="date" placeholder="Add dates" />
-            </h3>
-          </div>
-          <div className="search-check-out">
-            <h3>Check out
-              <br />
-              <input type="date" placeholder="Add dates" />
-            </h3>
-          </div>
-          <div className="search-guests">
-            <h3>Guest
-              <br />
-              <input placeholder="Add guests" disabled="disable" />
-            </h3>
-          </div>
-          <button className="search-submit"><i className="fas fa-search"></i></button>
-      </form>
+        <SearchBar />
     </div>
   );
 
