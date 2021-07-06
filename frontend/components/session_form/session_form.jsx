@@ -92,9 +92,6 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         {formRender}
-        <div className="splash-body">
-          Hello
-        </div>
       </div>
     );
   }

@@ -30,6 +30,6 @@ export const logout = () => (
   $.ajax({
     method: 'DELETE',
     url: '/api/session',
-    data: { authenticity_token: $('[name="csrf-token"]')[0].content, }
+    data: { authenticity_token: $('[name="csrf-token"]')[0].content, },
   })
 );
