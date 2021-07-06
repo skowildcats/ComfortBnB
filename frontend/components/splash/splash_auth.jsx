@@ -71,7 +71,7 @@ class SplashAuth extends React.Component{
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
         <Link to="/users/5">Account </Link>
         <button> Reservations</button>
-        <button> Log Out</button>
+        <button onClick={this.logoutUser.bind(this)}> Log Out</button>
       </div>
     } else {
       userIcon = <i className="profile-icon far fa-user"></i>
