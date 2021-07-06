@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 class SplashAuth extends React.Component{ 
   constructor(props) {
     super(props)
-    this.state = { formType: null}
+    this.state = { formType: null }
   }
 
   modalEvent(e) {
@@ -77,19 +77,24 @@ class SplashAuth extends React.Component{
     }
 
     if (this.state.formType === "login") {
-      sessionItems = <>
+      sessionItems = <div>
         <LogInFormContainer />
         <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Create account </button>
         <br />
         <button className="demo-user"> Demo User </button>
-      </>
-    } else {
-      sessionItems = <>
+      </div>
+    } else if (this.state.formType === "signup") {
+      sessionItems = <div>
         <SignUpFormContainer />
         <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Log in instead</button>
-      </>
+      </div>
+    } else {
+      sessionItems = <div>
+        <SignUpFormContainer />
+        <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Log in instead</button>
+      </div>
     }
-
+    
   return (
     <nav className="login-signup">
       <div id="session-modal" className="session-modal">
