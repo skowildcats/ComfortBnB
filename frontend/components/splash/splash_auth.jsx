@@ -33,6 +33,7 @@ class SplashAuth extends React.Component{
   logoutUser() {
     this.props.logout()
     this.toggleDropDown()
+    this.setState({ formType: null })
     this.props.history.push("/")
   }
 
@@ -69,7 +70,7 @@ class SplashAuth extends React.Component{
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
-        <Link to="/users/5">Account </Link>
+        <Link to={`/users/${currentUser.id}`}>Account </Link>
         <button> Reservations</button>
         <button onClick={this.logoutUser.bind(this)}> Log Out</button>
       </div>

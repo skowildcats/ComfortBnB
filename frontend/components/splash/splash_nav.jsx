@@ -16,13 +16,14 @@ class SplashNav extends React.Component {
   componentDidMount() {
     $(window).on('hashchange', function (e) {
       if (window.location.href.split('/').slice(-1)[0] === "") {
-        $(".nav-bar").css("border-style", "none")
+        // $(".nav-bar").css("--box-shadow-color", "transparent")
+        $(".nav-bar").css("color", "transparent")
         $(".nav-bar").css("background-color", "transparent")
         $(".home-link").css("color", "white")
         $(".nav-search").css("display", "none")
       } else {
-        // $(".nav-bar").css("border-style", "none", "none", "solid", "none")
-        $(".nav-bar").css("border-bottom-style", "solid")
+        // $(".nav-bar").css("--box-shadow-color", "lightgrey")
+        $(".nav-bar").css("color", "lightgrey")
         $(".nav-bar").css("background-color", "white")
         $(".home-link").css("color", "#fe385c")
         if ($(".nav-full-search").css("display") === "none") {
@@ -32,10 +33,12 @@ class SplashNav extends React.Component {
       }
     });
     if (window.location.href.split('/').slice(-1)[0] === "") {
-      $(".nav-bar").css("border-style", "none")
+      $(".nav-bar").css("color", "transparent")
       $(".nav-bar").css("background-color", "transparent")
       $(".home-link").css("color", "white")
       $(".nav-search").css("display", "none")
+    } else {
+      $(".nav-bar").css("color", "lightgrey")
     }
   }
 
