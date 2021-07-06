@@ -1,7 +1,7 @@
 import React from 'react';
 import LogInFormContainer from "../session_form/login_form_container"
 import SignUpFormContainer from "../session_form/signup_form_container"
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class SplashAuth extends React.Component{ 
   constructor(props) {
@@ -36,6 +36,10 @@ class SplashAuth extends React.Component{
     this.props.history.push("/")
   }
 
+  demoLogin() {
+    this.props.login({username: "test", password: "test"})
+  }
+
   dropDownEvent(e) {
     if (!e.target.closest(".profile-dropdown-items") && !e.target.closest(".profile-list-icon")) {
       document.querySelector(".profile-dropdown-items").style.display = 'none'
@@ -65,8 +69,9 @@ class SplashAuth extends React.Component{
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
-        <button>Reservations</button>
-        <button className="header-button" onClick={this.logoutUser.bind(this)}>Log Out</button>
+        <Link to="/users/5">Account </Link>
+        <button> Reservations</button>
+        <button> Log Out</button>
       </div>
     } else {
       userIcon = <i className="profile-icon far fa-user"></i>
@@ -81,7 +86,7 @@ class SplashAuth extends React.Component{
         <LogInFormContainer />
         <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Create account </button>
         <br />
-        <button className="demo-user"> Demo User </button>
+        <button className="demo-user" onClick={this.demoLogin.bind(this)}> Demo User </button>
       </div>
     } else if (this.state.formType === "signup") {
       sessionItems = <div>
@@ -94,7 +99,7 @@ class SplashAuth extends React.Component{
         <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Log in instead</button>
       </div>
     }
-    
+
   return (
     <nav className="login-signup">
       <div id="session-modal" className="session-modal">

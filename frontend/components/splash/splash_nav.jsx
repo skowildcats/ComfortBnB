@@ -6,16 +6,23 @@ import SearchBar from './search_bar';
 import { withRouter } from 'react-router-dom';
 import SplashAuth from './splash_auth';
 
-
+// $(".nav-bar").css({
+//   "border-color": "#C1E0FF",
+//   "border-width": "1px",
+//   "border-style": "solid"
+// });
 
 class SplashNav extends React.Component {
   componentDidMount() {
     $(window).on('hashchange', function (e) {
       if (window.location.href.split('/').slice(-1)[0] === "") {
+        $(".nav-bar").css("border-style", "none")
         $(".nav-bar").css("background-color", "transparent")
         $(".home-link").css("color", "white")
         $(".nav-search").css("display", "none")
       } else {
+        // $(".nav-bar").css("border-style", "none", "none", "solid", "none")
+        $(".nav-bar").css("border-bottom-style", "solid")
         $(".nav-bar").css("background-color", "white")
         $(".home-link").css("color", "#fe385c")
         if ($(".nav-full-search").css("display") === "none") {
@@ -25,6 +32,7 @@ class SplashNav extends React.Component {
       }
     });
     if (window.location.href.split('/').slice(-1)[0] === "") {
+      $(".nav-bar").css("border-style", "none")
       $(".nav-bar").css("background-color", "transparent")
       $(".home-link").css("color", "white")
       $(".nav-search").css("display", "none")
@@ -50,7 +58,7 @@ class SplashNav extends React.Component {
   }
 
   render() {
-    const {currentUser, logout} = this.props
+    const {currentUser, logout, login} = this.props
 
     const splashPage = () => (
       <div className="splash-nav">
@@ -69,7 +77,7 @@ class SplashNav extends React.Component {
           <div className="nav-full-search">
             <SearchBar />
           </div>
-          <SplashAuth currentUser={currentUser} logout={logout}/>
+          <SplashAuth currentUser={currentUser} logout={logout} login={login}/>
         </div>  
     </div>
   );

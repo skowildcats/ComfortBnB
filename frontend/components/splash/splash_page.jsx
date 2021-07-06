@@ -12,6 +12,7 @@ class SplashPage extends React.Component {
   render() {
     return (
       <div className="splash-search">
+        <div className="splash-background"></div>
         <SearchBar />
         <Link to="/browse" className="splash-body">Explore nearby</Link>
       </div>

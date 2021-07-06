@@ -21,36 +21,44 @@ body {
   font-family: 'Montserrat', sans-serif; 
 
   background-color: white;
+  /* background-position: center; */
+}
+
+.splash-background {
+  position: absolute;
+  margin-top: -9.1%;
+  width: 100%;
+  height: 100%;
   background-image: url('splash-background.jpeg'); 
   /* https://unsplash.com/photos/cYrMQA7a3Wc */
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   background-attachment: local;
-  /* background-position: center; */
+  z-index: -1;
 }
 
 @media only screen and (max-width: 1200px) {
-  body {
+  /* body {
     background-size: 100vw 90vh;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1000px) {
-  body {
+  /* body {
     background-size: 100vw 90vh;
-  }
+  } */
 }
 
 @media only screen and (max-width: 800px) {
-  body {
+  /* body {
     background-size: 100vw 80vh;
-  }
+  } */
 }
 
 @media only screen and (max-width: 600px) {
-  body {
+  /* body {
     background-size: 100vw 75vh;
-  }
+  } */
 }
 
 * {
