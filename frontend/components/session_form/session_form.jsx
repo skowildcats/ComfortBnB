@@ -1,6 +1,7 @@
 import React from 'react';
 
 class SessionForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = this.props.formContent;
@@ -15,7 +16,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // document.getElementById('session-modal').style.display = 'none'
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.setState(this.props.formContent)
@@ -86,11 +86,15 @@ class SessionForm extends React.Component {
             />
             <br />
           </div>
+          
         </form>
     } 
     return (
       <div className="login-form-container">
         {formRender}
+        <div className="splash-body">
+          Hello
+        </div>
       </div>
     );
   }

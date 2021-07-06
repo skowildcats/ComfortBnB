@@ -1,20 +1,22 @@
 import SplashNavContainer from "./splash_nav_container";
 import React from 'react';
+import SearchBar from './search_bar'
+import {Link, withRouter} from 'react-router-dom'
+
 
 class SplashPage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     return (
-      
-      <div className="splash-page">
-        <SplashNavContainer />
-        
-        <div className="splash-body">
-          Body Text
-        </div>
+      <div className="splash-search">
+        <SearchBar />
+        <Link to="/browse" className="splash-body">Explore nearby</Link>
       </div>
     )
   }
 }
 
-export default SplashPage
+export default withRouter(SplashPage)

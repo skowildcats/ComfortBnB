@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useImperativeHandle } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <form className="search-bar">
@@ -34,4 +39,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar
+export default withRouter(SearchBar)

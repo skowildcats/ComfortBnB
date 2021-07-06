@@ -6,6 +6,7 @@
   padding-top: 20px;
   padding-bottom: 4px;
   position: fixed;
+  background-color: white;
 } 
 
 .home-link {
@@ -15,22 +16,23 @@
   font-size: 20px;
   text-decoration: none;
   letter-spacing: -1px;
+  color: #fe385c;
 }
 
 .home-link:link{
-  color:white;
+  color: #fe385c;
 }
 .home-link:visited{
-  color:white;
+  color: #fe385c;
 }
 .home-link:hover{
-  color:white;
+  color: #fe385c;
 }
 .home-link:focus{
-  color:white;
+  color: #fe385c;
 }
 .home-link:active{
-  color:white;
+  color: #fe385c;
 }
 
 .profile-list-icon {
@@ -128,7 +130,7 @@
 }
 
 .nav-search{
-  display: none;
+  display: flex;
   margin-top: -6px;
   outline: none;
   padding: 8px;

@@ -3,39 +3,38 @@ import { Link } from 'react-router-dom';
 import LogInFormContainer from "../session_form/login_form_container"
 import SignUpFormContainer from "../session_form/signup_form_container"
 import SearchBar from './search_bar';
+import { withRouter } from 'react-router-dom';
 
 
 
 class SplashNav extends React.Component {
-  
-  constructor(props) {
-    super(props)
-    this.state = {formType: null}
-    this.scrollFunc()
-  }
-
-  scrollFunc() {
-    window.onscroll = function () {
-      if ($(".nav-full-search").css("display") !== "none") {
-        if ($(window).scrollTop() > 70) {
-          $(".nav-full-search").css("display", "none")
-        }
-      }
-      if ($(window).scrollTop() >= 70) {
+  componentDidMount() {
+    $(window).on('hashchange', function (e) {
+      if (window.location.href.split('/').slice(-1)[0] === "") {
+        $(".nav-bar").css("background-color", "transparent")
+        $(".home-link").css("color", "white")
+        $(".nav-search").css("display", "none")
+      } else {
         $(".nav-bar").css("background-color", "white")
         $(".home-link").css("color", "#fe385c")
         if ($(".nav-full-search").css("display") === "none") {
           $(".nav-search").css("display", "flex")
           $(".nav-search-icon").css("display", "block")
         }
-      } else {
-        $(".nav-bar").css("background-color", "transparent")
-        $(".home-link").css("color", "white")
-        $(".nav-search").css("display", "none")
-        $(".nav-search-icon").css("display", "none")
       }
+    });
+    if (window.location.href.split('/').slice(-1)[0] === "") {
+      $(".nav-bar").css("background-color", "transparent")
+      $(".home-link").css("color", "white")
+      $(".nav-search").css("display", "none")
     }
   }
+
+  constructor(props) {
+    super(props)
+    this.state = {formType: null, url: null}
+  }
+
 
   modalEvent(e) {
     if (!e.target.closest(".modal-form")) {
@@ -72,7 +71,7 @@ class SplashNav extends React.Component {
 
   logoutUser() {
     this.props.logout()
-    document.getElementById('profile-dropdown-items').style.display = "none"
+    this.toggleDropDown()
   }
 
   dropDownEvent(e) {
@@ -83,11 +82,12 @@ class SplashNav extends React.Component {
   }
 
   toggleDropDown() {
-    if (document.getElementById('profile-dropdown-items').style.display !== "flex") {
-      document.getElementById('profile-dropdown-items').style.display = "flex"
+    let tmp = document.getElementById('profile-dropdown-items')
+    if (tmp.style.display !== "flex") {
+      tmp.style.display = "flex"
       document.addEventListener("click", this.dropDownEvent)
     } else {
-      document.getElementById('profile-dropdown-items').style.display = "none"
+      tmp.style.display = "none"
       document.removeEventListener("click", this.dropDownEvent)
     }
   }
@@ -127,6 +127,7 @@ class SplashNav extends React.Component {
         <button onClick={this.toggleForm.bind(this)} className="modal-session-check"> Log in instead</button>
       </>
     }
+
     const splashPage = () => (
       <div className="splash-nav">
         <div className="nav-bar">
@@ -162,11 +163,10 @@ class SplashNav extends React.Component {
               <i className="profile-list fas fa-bars"></i>
               {userIcon}
             </button>
-            {profileItems }
+            {profileItems}
           </div>
           </nav>
         </div>  
-        <SearchBar />
     </div>
   );
 
@@ -175,4 +175,4 @@ class SplashNav extends React.Component {
 };
 
 
-export default SplashNav;
+export default withRouter(SplashNav);
