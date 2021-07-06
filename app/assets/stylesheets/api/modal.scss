@@ -59,6 +59,7 @@
 }
 
 .modal-form-text {
+  color: black;
   font-size: 75%;
   text-align: center;
   flex-grow: 1;
@@ -67,6 +68,7 @@
   padding-bottom: 5%;
   border-bottom: 1px solid lightgray;
 }
+
 
 .login-form input[type=text], .login-form input[type=password]{
   width: 100%;
@@ -95,6 +97,7 @@
 }
 
 .login-form-box p {
+  color: black;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: -10px;
