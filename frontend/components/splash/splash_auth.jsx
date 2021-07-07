@@ -37,6 +37,11 @@ class SplashAuth extends React.Component{
     this.props.history.push("/")
   }
 
+  gotoAccount() {
+    this.toggleDropDown()
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
+  }
+
   demoLogin() {
     this.props.login({username: "test", password: "test"})
   }
@@ -70,7 +75,7 @@ class SplashAuth extends React.Component{
     if (currentUser) {
       userIcon = <div className="profile-name">{currentUser.fname[0] + currentUser.lname[0]}</div>
       profileItems = <div id="profile-dropdown-items" className="profile-dropdown-items">
-        <Link to={`/users/${currentUser.id}`}>Account </Link>
+        <button onClick={this.gotoAccount.bind(this)}>Account </button>
         <button> Reservations</button>
         <button onClick={this.logoutUser.bind(this)}> Log Out</button>
       </div>
