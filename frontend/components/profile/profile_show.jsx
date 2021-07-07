@@ -11,7 +11,7 @@ class ProfileShow extends React.Component {
     return(
       <div className="profile-show">
         <h1 className="profile-header"> Personal info</h1>
-        <li> <div> Legal name</div>
+        <li> <div> Full name</div>
           <p>{currentUser.fname.charAt(0).toUpperCase() + currentUser.fname.slice(1) + " " + currentUser.lname.charAt(0).toUpperCase() + currentUser.lname.slice(1)}</p>
         </li>
         <li> <div> Email </div>
@@ -20,6 +20,7 @@ class ProfileShow extends React.Component {
         <li> <div> Username </div>
           <p>{currentUser.username}</p>
         </li>
+        <button> View reservations </button>
         
       </div>
     )
