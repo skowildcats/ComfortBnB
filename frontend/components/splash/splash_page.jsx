@@ -15,11 +15,11 @@ class SplashPage extends React.Component {
         <div className="splash-background"></div>
         <SearchBar  />
         <div className="splash-content">
-          <Link to="/browse" className="splash-body">
+          <div className="splash-body">
             <div className="splash-text-background">
-              <div className="splash-text">Take me to a comfort place</div>
+              <Link to="/browse" className="splash-text">Take me to a comfort place</Link>
             </div>
-            </Link>
+            </div>
           <h1 className="splash-explore"> Explore nearby</h1>
         </div>
       </div>
