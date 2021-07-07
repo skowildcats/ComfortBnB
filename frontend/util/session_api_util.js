@@ -19,7 +19,7 @@ export const signup = user => (
     data: { user, authenticity_token: $('[name="csrf-token"]')[0].content,  },
     success: function () {
       $("#session-modal").css("display", "none")
-    },
+    }, 
     error: function () {
       $('#errors').css("display", "block")
     }

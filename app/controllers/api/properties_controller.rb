@@ -10,11 +10,11 @@ class Api::PropertiesController < ApplicationController
   end
 
   def create
-    @property = Property.create!(bench_params)
+    @property = Property.create!(property_params)
     render :show
   end
 
-  def bench_params 
+  def property_params 
     params.require(:property).permit(:description, :lat, :lng)
   end
 end

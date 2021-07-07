@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store"
-import {login} from './actions/session_actions'
+import {logout} from './actions/session_actions'
+import {fetchProperties} from './actions/property_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchProperties = fetchProperties;
+  window.logout = logout;
 
   ReactDOM.render(<Root store={store}/>, root);
 })

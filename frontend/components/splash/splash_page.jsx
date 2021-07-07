@@ -16,9 +16,9 @@ class SplashPage extends React.Component {
         <SearchBar  />
         <div className="splash-content">
           <div className="splash-body">
-            <div className="splash-text-background">
-              <Link to="/browse" className="splash-text">Take me to a comfort place</Link>
-            </div>
+            <Link to="/browse" className="splash-text-background">
+              <div className="splash-text">Take me to a comfort place</div>
+            </Link>
             </div>
           <h1 className="splash-explore"> Explore nearby</h1>
         </div>

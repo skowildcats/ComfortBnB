@@ -1,2 +1,2 @@
-json.extract! property, :id, :description, :lat, :lng, 
+json.extract! property, :id, :description, :lat, :lng
 
