@@ -1,4 +1,4 @@
-const reservationsReducer = (state = {}, action) => {
+const tripsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     default:
@@ -6,4 +6,4 @@ const reservationsReducer = (state = {}, action) => {
   }
 };
 
-export default reservationsReducer
+export default tripsReducer

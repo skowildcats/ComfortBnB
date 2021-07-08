@@ -18,9 +18,8 @@ class PropertyIndexItem extends React.Component {
         <Link to={`/browse/${property.id}`} className="property-content">
           <div className="property-description" >{property.description}</div>
           <br />
-          {property.num_beds}
+          Max guests: {property.max_guests}
           <br />
-          {property.num_baths}
         </Link>
       </div>
     )

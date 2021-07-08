@@ -20,7 +20,7 @@ class ProfileShow extends React.Component {
         <li> <div> Username </div>
           <p>{currentUser.username}</p>
         </li>
-        <button> View reservations </button>
+        <button> View Trips </button>
         
       </div>
     )

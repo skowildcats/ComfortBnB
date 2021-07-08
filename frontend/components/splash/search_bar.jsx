@@ -29,8 +29,8 @@ class SearchBar extends React.Component {
         </div>
         <div className="search-guests">
           <h3>Guest
-            <br />
-            <input placeholder="Add guests" disabled="disable" />
+            <br />  
+            <input placeholder="Add guests" />
           </h3>
         </div>
         <button className="search-submit"><i className="fas fa-search"></i></button>
