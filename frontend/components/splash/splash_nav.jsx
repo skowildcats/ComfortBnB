@@ -22,6 +22,7 @@ class SplashNav extends React.Component {
         $(".home-link").css("color", "white")
         $(".nav-search").css("display", "none")
       } else {
+        $(".nav-search").css("color", "black")
         // $(".nav-bar").css("--box-shadow-color", "lightgrey")
         $(".nav-bar").css("color", "lightgrey")
         $(".nav-bar").css("background-color", "white")
@@ -38,6 +39,7 @@ class SplashNav extends React.Component {
       $(".home-link").css("color", "white")
       $(".nav-search").css("display", "none")
     } else {
+      $(".nav-search").css("color", "black")
       $(".nav-bar").css("color", "lightgrey")
     }
   }

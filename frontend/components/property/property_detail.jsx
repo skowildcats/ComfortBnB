@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class PropertyDetail extends React.Component {
   componentDidMount() {
@@ -32,6 +33,9 @@ class PropertyDetail extends React.Component {
     } else {
       return (
       <div className="property-detail">
+        <Link to="/browse" className="back-browse">
+            <i className="back-symbol fas fa-chevron-left"></i> Back to listings
+        </Link>
         <h1 className="property-detail-description">
           {property.description}
         </h1>

@@ -12,9 +12,9 @@ class PropertyIndexItem extends React.Component {
 
     return (
       <div className="property-listing">
-        <div className="property-image">
+        <Link to={`/browse/${property.id}`} className="property-image">
           Image Placeholder
-        </div>
+        </Link>
         <Link to={`/browse/${property.id}`} className="property-content">
           <div className="property-description" >{property.description} </div>
 
