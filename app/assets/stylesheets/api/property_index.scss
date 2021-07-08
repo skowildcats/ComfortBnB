@@ -18,9 +18,12 @@
 .property-content {
   white-space: nowrap;
   width: 60%;
+  height: 100%;
   text-overflow: clip;
   text-decoration: none;
   color: grey;
+  display: flex;
+  flex-direction: column;
 }
 
 .property-content:hover {
@@ -30,3 +33,31 @@
 .property-description {
   color: black;
 }
+
+.property-capacity {
+  margin-top: 20px;
+  display: flex;
+  font-size: 13px;
+}
+
+.property-capacity div {
+  display: flex;
+}
+
+.bullet-market {
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
+.property-amenities {
+  font-size: 13px;
+  margin-top: 5px;
+  flex-grow: 2.4;
+}
+
+.property-content-bottom {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
