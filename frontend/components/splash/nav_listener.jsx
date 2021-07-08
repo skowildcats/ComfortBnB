@@ -1,9 +1,6 @@
 import React from 'react';
 
 class NavListener extends React.Component {
-  componentWillUnmount() {
-
-  }
 
   scrollFunc() {
     window.onscroll = function () {
