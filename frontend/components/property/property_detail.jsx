@@ -1,17 +1,31 @@
 import React from 'react';
 
 class PropertyDetail extends React.Component {
+  componentDidMount() {
+    this.props.fetchProperty(this.props.match.params.propertyId).then(() => this.setState({ loading: false }))
+  }
+
   constructor(props) {
     super(props)
     this.state = {loading: true}
   }
 
-  componentDidMount() {
-    this.props.fetchProperty(this.props.match.params.propertyId).then(() => this.setState({loading: false}))
+  scrollFunc() {
+    window.onscroll = function () {
+      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 1200) {
+        $(".moving-reservation").css("position", "fixed")
+        $(".moving-reservation").css("transform", "translateY(-175%)")
+      } else {
+        $(".moving-reservation").css("position", "absolute")
+        $(".moving-reservation").css("transform", "translateY(0%)")
+      }
+    }
   }
+
 
   render() {
     const { property } = this.props
+    this.scrollFunc()  
     
     if (this.state.loading) {
       return null
@@ -28,7 +42,18 @@ class PropertyDetail extends React.Component {
           Image Placeholder
         </div>
         <div className="property-full-description">
-          Description Placeholder
+          <div className="property-full-description-text">
+            Description Placeholder
+          </div>
+
+          <div className="property-make-reservation">
+            <div className="moving-reservation">
+              Moving Reservation
+            </div>
+          </div>
+        </div>
+        <div className="property-review">
+          Reviews Placeholder
         </div>
       </div>
       )
