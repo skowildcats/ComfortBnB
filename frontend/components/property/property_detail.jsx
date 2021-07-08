@@ -18,8 +18,17 @@ class PropertyDetail extends React.Component {
     } else {
       return (
       <div className="property-detail">
-        <div className="property-description">
+        <h1 className="property-detail-description">
           {property.description}
+        </h1>
+        <div className="property-detail-header">
+          Header Placeholder
+        </div>
+        <div className="property-detail-image">
+          Image Placeholder
+        </div>
+        <div className="property-full-description">
+          Description Placeholder
         </div>
       </div>
       )
