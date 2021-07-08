@@ -7,7 +7,7 @@ class ProfileShow extends React.Component {
 
   render() {
     const { currentUser } = this.props
-    console.log(currentUser)
+    
     return(
       <div className="profile-show">
         <h1 className="profile-header"> Personal info</h1>

@@ -33,10 +33,6 @@
   margin-top: 7px;
 }
 
-.search-bar div:hover{
-  cursor: pointer;
-  background-color: #e0e0e0;
-}
 
 ::placeholder {
   font-size: 14px;
@@ -131,4 +127,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .search-guests input:focus{
   background-color: white;
+}
+
+.search-bar div:hover{
+  cursor: pointer;
+  background-color: #e0e0e0;
 }

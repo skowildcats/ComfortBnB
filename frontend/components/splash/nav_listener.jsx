@@ -13,7 +13,6 @@ class NavListener extends React.Component {
           }
         }
         if ($(window).scrollTop() >= 70) {
-          console.log($(window).scrollTop())
           $(".nav-bar").css("background-color", "white")
           $(".home-link").css("color", "#fe385c")
           if ($(".nav-full-search").css("display") === "none") {
