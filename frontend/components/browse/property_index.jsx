@@ -1,31 +1,20 @@
 import React from 'react'
+import PropertyIndexItem from './property_index_item'
 
 
 class PropertyIndex extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchProperties().then(() => {
-      this.setState({loading: false})
-    })
-  }
-
   constructor(props) {
     super(props)
-    this.state = {loading: true}
   }
 
   render() {
     const {properties} = this.props
-    if (this.state.loading) {
-      return null
-    }
+
     return (
-      <div>
-        Properties
+      <div className="browse-index">
+        <h1 className="browse-header">Stays in ...</h1>
         {properties.map(property => (
-          <div key={property.id}>
-            {property.description}
-          </div>
+          <PropertyIndexItem property={property} key={property.id}/>
         ))}
       </div>
     )

@@ -4,6 +4,19 @@
   height: inherit;
   width: 58%;
   border-right: 1px solid lightgray;
+  letter-spacing: -1px;
+}
+
+.browse-header {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.browse-index {
+  width: 100%;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  overflow: scroll;
 }
 
 .browse-page {

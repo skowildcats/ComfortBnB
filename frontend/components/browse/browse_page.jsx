@@ -1,16 +1,27 @@
 import React from 'react'
-import PropertyIndexContainer from './property_index_container'
+import PropertyIndex from './property_index'
 
 class BrowsePage extends React.Component {
+  componentDidMount() {
+    this.props.fetchProperties().then(() => {
+      this.setState({ loading: false })
+    })
+  }
+
   constructor(props) {
     super(props)
+    this.state = { loading: true }
   }
 
   render() {
-    return (
+    const { properties } = this.props
+
+    if (this.state.loading) {
+      null
+    } return (
       <div className="browse-page">
         <div className="browse-properties">
-          <PropertyIndexContainer />
+          <PropertyIndex properties={properties}/>
         </div>
         <div className="browse-map">
         

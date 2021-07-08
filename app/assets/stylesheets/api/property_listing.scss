@@ -1,0 +1,32 @@
+.property-listing {
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 250px;
+  display: flex;
+}
+
+.property-image {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 40%;
+  min-width: 40%;
+  height: 100%;
+  margin-right: 2%;
+}
+
+.property-content {
+  white-space: nowrap;
+  width: 60%;
+  text-overflow: clip;
+  text-decoration: none;
+  color: grey;
+}
+
+.property-content:hover {
+  cursor: pointer;
+}
+
+.property-description {
+  color: black;
+}

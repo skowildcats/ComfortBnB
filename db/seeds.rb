@@ -9,21 +9,30 @@
 
 Property.delete_all
 
+# def max_guests 
+#   rand()
+# end
 
-p1 = Property.create!(
-  description: "SF",
-  lat: 37.775769,
-  lng: -122.434960,
-)
+# def max_bed 
+#   rand(max_guests)
+# end
 
-p2 = Property.create!(
-  description: "CHI",
-  lat: 37.779760,
-  lng: -122.413820,
-)
+descriptions = ["Unique Spacious Studio Loft in Lakeview", "Bridgeport 3F Renovated 2bed/1bath Apt. MONTHLY", "Cozy Studio Apartment",
+"2F Location! Steps from South Loop 1bed/1bath Apt.", "MedDistrict Spacious Renovated 1br Apt MONTHLY"]
 
-p3 = Property.create!(
-  description: "NY",
-  lat: 37.769996,
-  lng: -122.511281,
-)
+
+descriptions.each do |description|
+  guests = rand(1..10)
+  beds = rand(1..guests)
+  bedrooms = rand(1..beds)
+  baths = rand(1..bedrooms)
+  Property.create!(
+    description: description,
+    lat: 37.775769,
+    lng: -122.434960,
+    max_guests: guests,
+    num_bedrooms: bedrooms,
+    num_beds: beds,
+    num_baths: baths,
+  )
+end
