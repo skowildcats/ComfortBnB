@@ -13,7 +13,7 @@ class PropertyDetail extends React.Component {
 
   scrollFunc() {
     window.onscroll = function () {
-      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 1200) {
+      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 1015) {
         $(".moving-reservation").css("position", "fixed")
         $(".moving-reservation").css("transform", "translateY(-175%)")
       } else {
@@ -47,7 +47,25 @@ class PropertyDetail extends React.Component {
         </div>
         <div className="property-full-description">
           <div className="property-full-description-text">
-            Description Placeholder
+              <div className="property-detail-capacity" >
+                <div> {property.max_guests === 1 ? "1 guest" : `${property.max_guests} guests`}</div>
+                <div> <div className="detail-bullet-marker">&#183; </div> {property.num_bedrooms === 1 ? "1 bedroom" : `${property.num_bedrooms} bedrooms`}</div>
+                <div> <div className="detail-bullet-marker">&#183; </div> {property.num_beds === 1 ? "1 bed" : `${property.num_beds} beds`}</div>
+                <div> <div className="detail-bullet-marker">&#183; </div> {property.num_baths === 1 ? "1 bath" : `${property.num_baths} baths`}</div>
+              </div>
+              <div className="property-full-paragraph">
+                <h2 className="paragraph-header">All about ...</h2>
+                <p className="paragraph-text">Property description here</p>
+              </div>
+
+              <div className="property-detail-amenities">
+                <h2>
+                  What this place offers
+                </h2>
+                <div className="amnity icons">
+                  Amenities/icons here
+                </div>
+              </div>
           </div>
 
           <div className="property-make-reservation">

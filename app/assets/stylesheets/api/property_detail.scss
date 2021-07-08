@@ -22,14 +22,13 @@
 }
 
 .property-full-description {
-  height: 1000px;
+  height: 815px;
   width: 100%;
   display: flex;
 }
 
 .property-full-description-text {
   width: 60%;
-  border: 1px solid black
 }
 
 .property-make-reservation {
@@ -48,7 +47,7 @@
 
 .property-review {
   height: 1000px;
-  border: 1px solid black
+  border-top: 1px solid lightgray;
 }
 
 .back-symbol {
@@ -69,4 +68,36 @@
 }
 .back-browse:active{
   color: black;
+}
+
+.property-detail-capacity {
+  margin-top: 40px;
+  display: flex;
+  font-size: 15px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid lightgray;
+}
+
+.property-detail-capacity div {
+  display: flex;
+}
+
+.detail-bullet-marker {
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
+.property-full-paragraph {  
+  margin-top: 30px;
+  height: 280px;
+  border-bottom: 1px solid lightgray
+}
+
+.h2 {
+ font-size: 22px;
+}
+
+.property-detail-amenities {
+  margin-top: 30px;
+  height: 390px;
 }
