@@ -13,7 +13,7 @@ class PropertyDetail extends React.Component {
 
   scrollFunc() {
     window.onscroll = function () {
-      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 1015) {
+      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 975) {
         $(".moving-reservation").css("position", "fixed")
         $(".moving-reservation").css("transform", "translateY(-175%)")
       } else {

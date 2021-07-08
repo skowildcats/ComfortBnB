@@ -5,7 +5,7 @@ class Api::PropertiesController < ApplicationController
   end
 
   def index
-    @properties = Property.all
+    @properties = Property.all.includes(:reviews)
     render :index
   end
 

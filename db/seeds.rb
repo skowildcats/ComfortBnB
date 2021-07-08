@@ -8,6 +8,7 @@
 
 
 Property.delete_all
+Review.delete_all
 
 # def max_guests 
 #   rand()
@@ -35,4 +36,10 @@ descriptions.each do |description|
     num_beds: beds,
     num_baths: baths,
   )
+end
+
+descriptions.each do |description|
+  10.times {
+    
+  }
 end
