@@ -18,7 +18,9 @@ class PropertyDetail extends React.Component {
     } else {
       return (
       <div className="property-detail">
-        {property.description}
+        <div className="property-description">
+          {property.description}
+        </div>
       </div>
       )
     }
