@@ -37,13 +37,38 @@ body {
   z-index: -3;
 }
 
+
+.san-francisco {
+  background-image: url('san-francisco.jpeg'); 
+  /* https://unsplash.com/photos/1kf69eE7VR4 */
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+}
+
+.chicago {
+  background-image: url('chicago.jpeg'); 
+  /* https://unsplash.com/photos/-csZbF1o5_k */
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+}
+
+.new-york {
+  background-image: url('new-york.jpeg'); 
+  /* https://unsplash.com/photos/wOj5odhDOZ0 */
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+}
+
+.los-angeles {
+  background-image: url('los-angeles.jpeg'); 
+  /* https://unsplash.com/photos/aNrRsB2wLDk */
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 1200px) {
   .splash-background {
     margin-top: -11vw;
-  }
-
-  .explore-cities div{
-    width: 50%;
   }
 }
 
@@ -51,15 +76,15 @@ body {
   .splash-background {
     margin-top: -13vw;
   }
+
+  .city-content {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 900px) {
   .splash-background {
     margin-top: -14vw;
-  }
-
-  .explore-cities div {
-    width: 100%;
   }
 }
 

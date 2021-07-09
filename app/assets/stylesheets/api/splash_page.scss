@@ -57,8 +57,27 @@
   margin-right: auto;
   margin-left: auto;
 }
-.explore-cities div{
+.city-content {
   width: 25%;
   height: 100px;
-  border: 1px solid black
+  display: flex
+}
+
+.city-image {
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+  border-radius: 12px;
+}
+
+.city-name {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.city-description {
+  color: grey;
+  font-size: 12px;
 }

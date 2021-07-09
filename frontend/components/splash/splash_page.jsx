@@ -22,10 +22,46 @@ class SplashPage extends React.Component {
             </div>
           <h1 className="splash-explore"> Explore nearby
             <div className="explore-cities">
-              <div> Chicago </div>
-              <div> New York </div>
-              <div> San Francisco </div>
-              <div> Los Angeles </div>
+              <div className="city-content"> 
+                <div className="city-image chicago">
+                </div> 
+                <div className="city-name">
+                  Chicago
+                  <div className="city-description">
+                    Chicago theatre
+                  </div>
+                </div>
+              </div>
+              <div className="city-content">
+                <div className="city-image new-york">
+                </div>
+                <div className="city-name">
+                  New York
+                  <div className="city-description">
+                    Brooklyn bridge
+                  </div>
+                </div>
+              </div>
+              <div className="city-content">
+                <div className="city-image san-francisco">
+                </div>
+                <div className="city-name">
+                  San Francisco
+                  <div className="city-description">
+                    Golden gate bridge
+                  </div>
+                </div>
+              </div>
+              <div className="city-content">
+                <div className="city-image los-angeles">
+                </div>
+                <div className="city-name">
+                  Los Angeles
+                  <div className="city-description">
+                    Hollywood sign
+                  </div>
+                </div>
+              </div>
             </div>
           </h1>
         </div>
