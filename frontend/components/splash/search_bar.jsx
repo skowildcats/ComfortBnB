@@ -4,15 +4,15 @@ import { withRouter } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {minGuest: 0}
   }
 
   handleSubmit() {
     this.props.history.push('/browse')
   }
 
-  updateState() {
-
+  handleChange(filter) {
+    return e => this.props.updateFilter(filter, parseInt(e.currentTarget.value))
   }
 
   render() {
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
         <div className="search-guests">
           <h3>Guest
             <br />  
-            <input placeholder="Add guests" />
+            <input onChange={this.handleChange('minGuest').bind(this)} placeholder="Add guests" />
           </h3>
         </div>
         <button onClick={this.handleSubmit.bind(this)} className="search-submit"><i className="fas fa-search"></i></button>

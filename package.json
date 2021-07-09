@@ -24,7 +24,10 @@
     "lib": "lib",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1"
+  },
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"

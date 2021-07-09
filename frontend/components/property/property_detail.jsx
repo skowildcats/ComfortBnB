@@ -51,7 +51,7 @@ class PropertyDetail extends React.Component {
           </div>
         </div>
         <div className="property-detail-image">
-          Image Placeholder
+          Image placeholder
         </div>
         <div className="property-full-description">
           <div className="property-full-description-text">

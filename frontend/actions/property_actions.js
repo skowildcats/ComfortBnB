@@ -27,15 +27,17 @@ export const receiveProperty = ({ property }) => ({
 //   ))
 // );
 
-export const fetchProperties = filters => dispatch => (
-  APIUtil.fetchProperties(filters).then(properties => (
-    dispatch(receiveProperties(properties))
-  ))
-);
+export const fetchProperties = filters => dispatch => {
+  // console.log(filters)
+  return APIUtil.fetchProperties(filters).then(properties => {
+    console.log(properties)
+    return dispatch(receiveProperties(properties))
+  })
+};
 
 export const fetchProperty = id => dispatch => (
   APIUtil.fetchProperty(id).then(payload => (
-    dispatch(receiveProperty(payload))
+    dispatch(receive(payload))
   ))
 );
 

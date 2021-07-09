@@ -3,7 +3,7 @@ import PropertyIndex from './property_index'
 
 class BrowsePage extends React.Component {
   componentDidMount() {
-    this.props.fetchProperties().then(() => {
+    this.props.fetchProperties(this.props.filters).then(() => {
       this.setState({ loading: false })
     })
   }

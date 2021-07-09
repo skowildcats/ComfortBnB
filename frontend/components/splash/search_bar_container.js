@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateFilter } from './action'
+import { updateFilter } from '../../actions/filter_actions'
 import SearchBar from './search_bar';
 
 const mapStateToProps = ({ session, entities: { users }, errors }) => {

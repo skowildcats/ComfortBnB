@@ -1,6 +1,6 @@
 import SplashNavContainer from "./splash_nav_container";
 import React from 'react';
-import SearchBar from './search_bar'
+import SearchBarContainer from './search_bar_container'
 import {Link, withRouter} from 'react-router-dom'
 
 
@@ -13,7 +13,7 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-search">
         <div className="splash-background"></div>
-        <SearchBar  />
+        <SearchBarContainer  />
         <div className="splash-content">
           <div className="splash-body">
             <Link to="/browse" className="splash-text-background">
@@ -65,6 +65,7 @@ class SplashPage extends React.Component {
             </div>
           </h1>
         </div>
+        
       </div>
     )
   }

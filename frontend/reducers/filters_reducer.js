@@ -2,7 +2,6 @@ import { UPDATE_FILTER } from "../actions/filter_actions";
 
 const defaultFilters = Object.freeze({
   minGuest: 1,
-  maxGuest: 10
 })
 
 const filtersReducer = (state = defaultFilters, action) => {
