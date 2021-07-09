@@ -38,7 +38,7 @@ descriptions.each do |description|
     price: rand(50..200)
   )
 
-  40.times do |i|
+  rand(20..40).times do |i|
     Review.create!(
       body: "eh",
       rating: rand(1..5),

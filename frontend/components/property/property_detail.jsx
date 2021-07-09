@@ -44,7 +44,11 @@ class PropertyDetail extends React.Component {
           {property.description}
         </h1>
         <div className="property-detail-header">
-          Header Placeholder
+          <div className="property-review-rating">
+            <i className="review-star fas fa-star"></i>
+            <div className="review-rating">{parseFloat(property.average_rating).toFixed(2)}</div>
+            <div>({property.review_count} reviews) </div>
+          </div>
         </div>
         <div className="property-detail-image">
           Image Placeholder
