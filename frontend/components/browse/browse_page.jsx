@@ -15,7 +15,7 @@ class BrowsePage extends React.Component {
 
   render() {
     const { properties } = this.props
-
+    
     if (this.state.loading) {
       null
     } return (

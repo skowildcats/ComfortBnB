@@ -29,10 +29,10 @@ class PropertyIndexItem extends React.Component {
           </div>
           <div className="property-content-bottom"> 
             <div className="property-review-rating">
-              Review Rating Placeholder
+              {property.average_rating}
             </div>
             <div className="property-price">
-              Price Placeholder
+              ${property.price} / night
             </div>
           </div>
 

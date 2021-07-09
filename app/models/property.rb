@@ -14,11 +14,15 @@
 #  num_baths    :integer          not null
 #
 class Property < ApplicationRecord 
-  validates :description, :lat, :lng, :max_guests, :num_bedrooms, :num_beds, :num_baths, presence: true
+  validates :description, :lat, :lng, :max_guests, :num_bedrooms, :num_beds, :num_baths, :price, presence: true
 
 
   has_many :reviews,
     primary_key: :id,
     foreign_key: :property_id,
     class_name: :Review
+
+  def average_rating
+    reviews.average(:rating)
+  end
 end

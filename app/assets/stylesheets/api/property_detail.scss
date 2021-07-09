@@ -46,6 +46,70 @@
   position: absolute;
 }
 
+.reservation-content {
+  height: 100%;
+  margin-left: 6%;
+  margin-right: 6%;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-price {
+  height: 27%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.property-full-price, .property-full-review {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.calendar-guest {
+  height: 41%;
+  border: 1px solid #b0b0b0;
+  border-radius: 20px;
+}
+
+.property-full-calendar {
+  height: 50%;
+  display: flex;
+}
+
+.property-full-check-in, .property-full-check-out {
+  width: 50%;
+}
+
+.property-full-check-in {
+  border-right: 1px solid #b0b0b0;
+}
+
+.property-full-guest {
+  height: 50%;
+  border-top: 1px solid #b0b0b0;
+}
+
+.check-availability {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.availability-button {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  background-image: linear-gradient(to right, #e51f4e, #d60567);
+  color: white;
+  border-radius: 8px
+}
+
+.availability-button:hover {
+  cursor: pointer;
+}
+
+
 .property-review {
   height: 1000px;
   border-top: 1px solid lightgray;

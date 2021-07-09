@@ -13,9 +13,12 @@ class PropertyDetail extends React.Component {
 
   scrollFunc() {
     window.onscroll = function () {
-      if ($(window).scrollTop() >= 450 && $(window).scrollTop() <= 975) {
+      if ($(window).scrollTop() >= 480 && $(window).scrollTop() <= 975) {
         $(".moving-reservation").css("position", "fixed")
         $(".moving-reservation").css("transform", "translateY(-175%)")
+      } else if ($(window).scrollTop() >= 975) {
+        $(".moving-reservation").css("position", "absolute")
+        $(".moving-reservation").css("transform", "translateY(180%)")
       } else {
         $(".moving-reservation").css("position", "absolute")
         $(".moving-reservation").css("transform", "translateY(0%)")
@@ -70,12 +73,55 @@ class PropertyDetail extends React.Component {
 
           <div className="property-make-reservation">
             <div className="moving-reservation">
-              Moving Reservation
+              <div className="reservation-content"> 
+                <div className="review-price">
+                  <div className="property-full-price">
+                    Price here
+                  </div>
+                  <div className="property-full-review">
+                    Review here
+                  </div>
+                </div>
+                <div className="calendar-guest">
+                  <div className="property-full-calendar">
+                    <div className="property-full-check-in">
+                      Check in
+                    </div>
+                      <div className="property-full-check-out">
+                      Check out
+                    </div>
+                  </div>
+                  <div className="property-full-guest">
+                    Guest
+                  </div>
+                </div>
+                <div className="check-availability">
+                  <button className="availability-button">
+                    Check availability
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div className="property-review">
-          Reviews Placeholder
+          <div className="review-header">
+            Placeholder
+          </div>
+          <div className="rating-scale">
+            Placeholder here
+          </div>
+          <div className="user-reviews">
+            User reviews here
+          </div>
+        </div>
+        <div className="property-location">
+          <div className="property-map-header">
+            Where you'll be
+          </div>
+          <div className="property-map">
+            Map placeholder
+          </div>
         </div>
       </div>
       )

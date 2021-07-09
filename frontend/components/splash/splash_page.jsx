@@ -20,7 +20,14 @@ class SplashPage extends React.Component {
               <div className="splash-text">Take me to a comfort place</div>
             </Link>
             </div>
-          <h1 className="splash-explore"> Explore nearby</h1>
+          <h1 className="splash-explore"> Explore nearby
+            <div className="explore-cities">
+              <div> Chicago </div>
+              <div> New Yor k </div>
+              <div> San Francisco </div>
+              <div> Los Angeles </div>
+            </div>
+          </h1>
         </div>
       </div>
     )

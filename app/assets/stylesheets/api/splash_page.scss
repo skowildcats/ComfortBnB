@@ -44,8 +44,21 @@
 }
 
 .splash-explore {
+  margin-top: -40px;
   position: relative;
   margin-left: 5vw;
-  padding-bottom: 250px;
+  margin-right: 5vw;
   letter-spacing: -.5px;
+}
+
+.explore-cities{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+}
+.explore-cities div{
+  width: 25%;
+  height: 100px;
+  border: 1px solid black
 }

@@ -3,4 +3,4 @@ json.review do
 end
 
 
-json.average_rating @review.bench.average_rating
+json.average_rating @review.property.average_rating

@@ -37,22 +37,48 @@ body {
   z-index: -3;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   .splash-background {
     margin-top: -11vw;
+  }
+
+  .explore-cities div{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .splash-background {
+    margin-top: -13vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .splash-background {
+    margin-top: -14vw;
+  }
+
+  .explore-cities div {
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .splash-background {
-    margin-top: -15vw;
+    margin-top: -16vw;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  /* body {
-    background-size: 100vw 75vh;
-  } */
+  .splash-background {
+    margin-top: -18vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .splash-background {
+    margin-top: -20vw;
+  }
 }
 
 * {
