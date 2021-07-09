@@ -29,10 +29,13 @@ class PropertyIndexItem extends React.Component {
           </div>
           <div className="property-content-bottom"> 
             <div className="property-review-rating">
-              {property.average_rating}
-            </div>
+              <i className="review-star fas fa-star"></i>
+              <div>{parseFloat(property.average_rating).toFixed(2)}</div>
+              ({property.review_count} reviews)
+            </div>  
             <div className="property-price">
-              ${property.price} / night
+              <div className="property-price-bold">${property.price}</div>
+               &nbsp; / night
             </div>
           </div>
 

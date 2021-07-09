@@ -25,4 +25,8 @@ class Property < ApplicationRecord
   def average_rating
     reviews.average(:rating)
   end
+
+  def review_count
+    reviews.count(:rating)
+  end
 end

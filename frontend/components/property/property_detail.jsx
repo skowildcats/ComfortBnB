@@ -31,6 +31,7 @@ class PropertyDetail extends React.Component {
     const { property } = this.props
     this.scrollFunc()  
     
+
     if (this.state.loading) {
       return null
     } else {
@@ -109,10 +110,11 @@ class PropertyDetail extends React.Component {
             Placeholder
           </div>
           <div className="rating-scale">
-            Placeholder here
+            {property.average_rating}
           </div>
           <div className="user-reviews">
-            User reviews here
+            {Object.values(property.reviews)[0].body}
+
           </div>
         </div>
         <div className="property-location">

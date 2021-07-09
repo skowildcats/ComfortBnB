@@ -10,6 +10,7 @@ json.property do
   end
 
   json.average_rating @property.average_rating
+  json.review_count property.review_count
 end
 
 

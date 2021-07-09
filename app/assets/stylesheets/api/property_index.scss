@@ -61,3 +61,32 @@
   justify-content: space-between;
 }
 
+
+.property-price {
+  display: flex;
+  font-size: 16px;
+  color: black
+}
+
+.property-price-bold {
+  font-weight: bold;
+}
+
+.property-review-rating {
+  font-size: 14px;
+  display: flex;
+}
+
+.property-review-rating div {
+  color: black;
+  font-weight: bold;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.review-star {
+  color:#fe385c;
+  font-size: 13px;
+  margin-top: auto;
+  margin-bottom: auto;
+}

@@ -23,7 +23,7 @@ class SplashPage extends React.Component {
           <h1 className="splash-explore"> Explore nearby
             <div className="explore-cities">
               <div> Chicago </div>
-              <div> New Yor k </div>
+              <div> New York </div>
               <div> San Francisco </div>
               <div> Los Angeles </div>
             </div>
