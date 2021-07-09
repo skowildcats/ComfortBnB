@@ -28,9 +28,7 @@ export const receiveProperty = ({ property }) => ({
 // );
 
 export const fetchProperties = filters => dispatch => {
-  // console.log(filters)
   return APIUtil.fetchProperties(filters).then(properties => {
-    console.log(properties)
     return dispatch(receiveProperties(properties))
   })
 };
