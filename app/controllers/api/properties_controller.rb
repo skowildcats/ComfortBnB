@@ -1,6 +1,7 @@
 class Api::PropertiesController < ApplicationController
 
   def show
+    # debugger
     @property = Property.find(params[:id])
   end
 

@@ -33,11 +33,11 @@ export const fetchProperties = filters => dispatch => {
   })
 };
 
-export const fetchProperty = id => dispatch => (
-  APIUtil.fetchProperty(id).then(payload => (
-    dispatch(receive(payload))
-  ))
-);
+export const fetchProperty = id => dispatch => {
+  return APIUtil.fetchProperty(id).then(payload => {
+    return dispatch(receiveProperty(payload))
+  })
+};
 
 // export const createBench = bench => dispatch => (
 //   APIUtil.createBench(bench).then(bench => (
