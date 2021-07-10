@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {minGuest: 0}
+    this.state = {minGuest: 1}
   }
 
   handleSubmit() {
@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   }
 
   handleChange(filter) {
-    return e => this.props.updateFilter(filter, parseInt(e.currentTarget.value))
+    return e => this.props.updateFilter(filter, e.currentTarget.value)
   }
 
   render() {
@@ -21,25 +21,25 @@ class SearchBar extends React.Component {
         <div className="search-location">
           <h3> Location
             <br />
-            <input type="text" placeholder="Where are you going?" />
+            <input onChange={this.handleChange('location')} type="text" placeholder="Where are you going?" />
           </h3>
         </div>
         <div className="search-check-in">
           <h3>Check in
             <br />
-            <input type="date" placeholder="Add dates" />
+            <input onChange={this.handleChange('checkIn')} type="date" placeholder="Add dates" />
           </h3>
         </div>
         <div className="search-check-out">
           <h3>Check out
             <br />
-            <input type="date" placeholder="Add dates" />
+            <input onChange={this.handleChange('checkOut')} type="date" placeholder="Add dates" />
           </h3>
         </div>
         <div className="search-guests">
           <h3>Guest
             <br />  
-            <input onChange={this.handleChange('minGuest').bind(this)} placeholder="Add guests" />
+            <input onChange={this.handleChange('minGuest')} placeholder="Add guests" />
           </h3>
         </div>
         <button onClick={this.handleSubmit.bind(this)} className="search-submit"><i className="fas fa-search"></i></button>

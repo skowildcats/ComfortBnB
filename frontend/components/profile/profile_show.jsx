@@ -12,10 +12,10 @@ class ProfileShow extends React.Component {
       <div className="profile-show">
         <h1 className="profile-header"> Personal info</h1>
         <li> <div> Full name</div>
-          <p>{currentUser.fname.charAt(0).toUpperCase() + currentUser.fname.slice(1) + " " + currentUser.lname.charAt(0).toUpperCase() + currentUser.lname.slice(1)}</p>
+          <p>{currentUser.fname + " " + currentUser.lname}</p>
         </li>
         <li> <div> Email </div>
-          <p>{currentUser.email.charAt(0).toUpperCase() + currentUser.email.slice(1)}</p>
+          <p>{currentUser.email}</p>
         </li>
         <li> <div> Username </div>
           <p>{currentUser.username}</p>

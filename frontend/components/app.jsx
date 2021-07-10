@@ -8,6 +8,7 @@ import ProfileShowContainer from '../components/profile/profile_show_container'
 import BrowsePageContainer from "./browse/browse_page_container";
 import NavListener from "./splash/nav_listener";
 import PropertyDetailContainer from "./property/property_detail_container"
+import TripView from './trip/trip_view'
 
 
 const App = () => (
@@ -18,8 +19,9 @@ const App = () => (
       <Route exact path="/" component={NavListener} />
       <ProtectedRoute exact path="/browse" component={BrowsePageContainer} />
       <AuthRoute exact path="/signup" component={SplashModal}/>
-      <Route path="/browse/:propertyId" component={PropertyDetailContainer} />
-      <Route path="/users/:userId" component={ProfileShowContainer} />
+      <ProtectedRoute path="/browse/:propertyId" component={PropertyDetailContainer} />
+      <ProtectedRoute path="/users/:userId" component={ProfileShowContainer} />
+      <ProtectedRoute path="/trips" component={TripView} />
     </Switch>
   </>
 );
