@@ -74,8 +74,16 @@ class ImageSlideshow extends React.Component {
             <img src={`https://picsum.photos/300/304?random=${idx * 5 + 5}`} />
           </div>
 
-          <a className="prev" onClick={this.changeSlide.bind(this, 'prev')} >&#10094;</a>
-          <a className="next" onClick={this.changeSlide.bind(this, 'next')}>&#10095;</a>
+          <a className="prev" onClick={this.changeSlide.bind(this, 'prev')}>
+            <div>
+              &#10094;
+            </div>
+          </a>
+          <a className="next" onClick={this.changeSlide.bind(this, 'next')}>
+            <div>
+              &#10095;
+            </div>
+          </a>
         </div>
 
         <div className="dots">
