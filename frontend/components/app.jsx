@@ -23,7 +23,6 @@ const App = () => (
       <ProtectedRoute path="/browse/:propertyId" component={PropertyDetailContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileShowContainer} />
       <ProtectedRoute path="/trips" component={TripView} />
-      <Route exact path="/test" component={ImageSlideshow} />
     </Switch>
   </>
 );
