@@ -9,6 +9,7 @@ import BrowsePageContainer from "./browse/browse_page_container";
 import NavListener from "./splash/nav_listener";
 import PropertyDetailContainer from "./property/property_detail_container"
 import TripView from './trip/trip_view'
+import ImageSlideshow from "./browse/image_slideshow";
 
 
 const App = () => (
@@ -22,6 +23,7 @@ const App = () => (
       <ProtectedRoute path="/browse/:propertyId" component={PropertyDetailContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileShowContainer} />
       <ProtectedRoute path="/trips" component={TripView} />
+      <Route exact path="/test" component={ImageSlideshow} />
     </Switch>
   </>
 );

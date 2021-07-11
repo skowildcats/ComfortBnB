@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ImageSlideshow from './image_slideshow'
 
 class PropertyIndexItem extends React.Component {
   constructor(props) {
@@ -8,13 +9,13 @@ class PropertyIndexItem extends React.Component {
 
 
   render() {
-    const {property} = this.props
+    const {property, idx} = this.props
 
     return (
       <div className="property-listing">
-        <Link to={`/browse/${property.id}`} className="property-image">
-          Image Placeholder
-        </Link>
+        <div className="property-image">
+          <ImageSlideshow idx={idx}/>
+        </div>
         <Link to={`/browse/${property.id}`} className="property-content">
           <div className="property-description" >{property.description} </div>
 
