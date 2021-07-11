@@ -22,6 +22,11 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :reservations,
+    primary_key: :id,
+    foreign_key: :property_id,
+    class_name: :Reservation
+
   # has_many :reviews,
   #   foreign_key: :author_id
     

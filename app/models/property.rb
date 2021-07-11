@@ -12,6 +12,7 @@
 #  num_bedrooms :integer          not null
 #  num_beds     :integer          not null
 #  num_baths    :integer          not null
+#  price        :integer          not null
 #
 class Property < ApplicationRecord 
   validates :description, :lat, :lng, :max_guests, :num_bedrooms, :num_beds, :num_baths, :price, presence: true
@@ -21,6 +22,11 @@ class Property < ApplicationRecord
     primary_key: :id,
     foreign_key: :property_id,
     class_name: :Review
+
+  has_many :reservations,
+    primary_key: :id,
+    foreign_key: :property_id,
+    class_name: :Reservation
 
   def average_rating
     reviews.average(:rating)

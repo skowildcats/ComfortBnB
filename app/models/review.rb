@@ -8,6 +8,7 @@
 #  property_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  author_id   :integer          not null
 #
 class Review < ApplicationRecord
   validates :rating, inclusion: { in: (1..5) }
