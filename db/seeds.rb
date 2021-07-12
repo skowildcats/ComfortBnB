@@ -10,10 +10,12 @@
 Property.delete_all
 Review.delete_all
 Reservation.delete_all
+User.delete_all
 
 descriptions = ["Unique Spacious Studio Loft in Lakeview", "Bridgeport 3F Renovated 2bed/1bath Apt. MONTHLY", "Cozy Studio Apartment",
 "2F Location! Steps from South Loop 1bed/1bath Apt.", "MedDistrict Spacious Renovated 1br Apt MONTHLY"]
 
+user = User.create!(username: test, password: test, fname: test, lname: test, email: test)
 
 descriptions.each do |description|
   guests = rand(1..10)
@@ -47,7 +49,7 @@ descriptions.each do |description|
     Reservation.create!(
       num_guests: 3,
       property_id: p.id,
-      user_id: 6,
+      user_id: user.id,
       checkin_date: DateTime.new(2021,7,checkIn),
       checkout_date: DateTime.new(2021,7,checkOut),
     )
