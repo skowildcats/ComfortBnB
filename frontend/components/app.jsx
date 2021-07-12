@@ -8,8 +8,7 @@ import ProfileShowContainer from '../components/profile/profile_show_container'
 import BrowsePageContainer from "./browse/browse_page_container";
 import NavListener from "./splash/nav_listener";
 import PropertyDetailContainer from "./property/property_detail_container"
-import TripView from './trip/trip_view'
-import ImageSlideshow from "./browse/image_slideshow";
+import TripViewContainer from './trip/trip_view_container'
 
 
 const App = () => (
@@ -22,7 +21,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SplashModal}/>
       <ProtectedRoute path="/browse/:propertyId" component={PropertyDetailContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileShowContainer} />
-      <ProtectedRoute path="/trips" component={TripView} />
+      <ProtectedRoute path="/trips" component={TripViewContainer} />
     </Switch>
   </>
 );

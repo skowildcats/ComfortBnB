@@ -33,3 +33,10 @@ export const logout = () => (
     data: { authenticity_token: $('[name="csrf-token"]')[0].content, },
   })
 );
+
+export const fetchUser = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${id}`
+  })
+)

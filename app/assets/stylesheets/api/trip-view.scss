@@ -1,11 +1,30 @@
-.trip-header {
-  margin-top: 150px;
+.trip-view {
+  width: 89vw;
   margin-left: auto;
   margin-right: auto;
-  width: 70vw;
-  height: 100vh;
+}
+
+.trip-header {
+  margin-top: 110px;
+  margin-bottom: 38px;
 }
 
 .trip-header > div {
   font-size: 20px;
 }
+
+.past, .upcoming {
+  font-weight: bold;
+}
+
+.past-text, .upcoming-text {
+  border-bottom: 1px solid lightgray;
+  padding: 15px;
+}
+
+.past-reservations, .upcoming-reservations   {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+

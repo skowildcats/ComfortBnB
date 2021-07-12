@@ -5,6 +5,10 @@ class ProfileShow extends React.Component {
     super(props)
   }
 
+  redirectTrip() {
+    this.props.history.push('/trips')
+  }
+
   render() {
     const { currentUser } = this.props
     
@@ -20,7 +24,7 @@ class ProfileShow extends React.Component {
         <li> <div> Username </div>
           <p>{currentUser.username}</p>
         </li>
-        <button> View Trips </button>
+        <button onClick={this.redirectTrip.bind(this)}> View Trips </button>
         
       </div>
     )

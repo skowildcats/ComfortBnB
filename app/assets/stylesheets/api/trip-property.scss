@@ -1,0 +1,77 @@
+.trip-property {
+  font-weight: normal;
+  height: 375px;
+  width: 30%;
+  margin-right: 3.33%;
+  margin-bottom: 3.33%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px lightgray;
+  text-decoration: none;
+}
+
+.trip-property:link{
+  color: black;
+}
+.trip-property:visited{
+  color: black;
+}
+.trip-property:hover{
+  color: black;
+}
+.trip-property:focus{
+  color: black;
+}
+.trip-property:active{
+  color: black;
+}
+
+.trip-property:hover {
+  cursor: pointer;
+}
+
+.trip-property:hover{
+  box-shadow: 0px 2px 15px lightgray;
+}
+
+.reservation-image {
+  height: 50%;
+  border: 1px solid black;
+  border-radius: 20px 20px 0 0;
+}
+
+.reservation-information {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
+.reservation-information-date {
+  height: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 12px;
+  color: gray;
+  padding-top: 20px;
+}
+
+.reservation-information-description {
+  height: 30%;
+  font-size: 12px;
+  padding-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.reservation-show-more {
+  border-top: 1px solid lightgray;
+  height: 30%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.reservation-show-more:hover {
+  background-color: rgb(241, 240, 240);
+  border-radius: 0 0 20px 20px;
+}

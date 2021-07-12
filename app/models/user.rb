@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   has_many :reservations,
     primary_key: :id,
-    foreign_key: :property_id,
+    foreign_key: :user_id,
     class_name: :Reservation
 
   # has_many :reviews,

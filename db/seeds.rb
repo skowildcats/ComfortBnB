@@ -9,14 +9,7 @@
 
 Property.delete_all
 Review.delete_all
-
-# def max_guests 
-#   rand()
-# end
-
-# def max_bed 
-#   rand(max_guests)
-# end
+Reservation.delete_all
 
 descriptions = ["Unique Spacious Studio Loft in Lakeview", "Bridgeport 3F Renovated 2bed/1bath Apt. MONTHLY", "Cozy Studio Apartment",
 "2F Location! Steps from South Loop 1bed/1bath Apt.", "MedDistrict Spacious Renovated 1br Apt MONTHLY"]
@@ -38,13 +31,28 @@ descriptions.each do |description|
     price: rand(50..200)
   )
 
-  rand(20..40).times do |i|
+  rand(10..20).times do |i|
     Review.create!(
       body: "eh",
-      rating: rand(1..5),
+      rating: rand(3..5),
       property_id: p.id,
       author_id: 6
     )
   end
 
+
+  3.times do |i| 
+    checkIn = rand(1..20)
+    checkOut = rand(checkIn+1..28)
+    Reservation.create!(
+      num_guests: 3,
+      property_id: p.id,
+      user_id: 6,
+      checkin_date: DateTime.new(2021,7,checkIn),
+      checkout_date: DateTime.new(2021,7,checkOut),
+    )
+  end
+
 end
+
+
