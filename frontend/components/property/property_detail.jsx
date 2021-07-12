@@ -51,7 +51,15 @@ class PropertyDetail extends React.Component {
           </div>
         </div>
         <div className="property-detail-image">
-          Image placeholder
+          <div className="main-image">
+            <img src={`https://picsum.photos/300/304?random=1`} />
+          </div>
+          <div className="sub-image">
+            <img src={`https://picsum.photos/300/304?random=2`} />
+            <img className="sub-image-2" src={`https://picsum.photos/300/304?random=3`} />
+            <img src={`https://picsum.photos/300/304?random=4`} />
+            <img className="sub-image-4" src={`https://picsum.photos/300/304?random=5`} />
+          </div>
         </div>
         <div className="property-full-description">
           <div className="property-full-description-text">
@@ -62,7 +70,7 @@ class PropertyDetail extends React.Component {
                 <div> <div className="detail-bullet-marker">&#183; </div> {property.num_baths === 1 ? "1 bath" : `${property.num_baths} baths`}</div>
               </div>
               <div className="property-full-paragraph">
-                <h2 className="paragraph-header">All about ...</h2>
+                <h2 className="paragraph-header">All about {property.description}</h2>
                 <p className="paragraph-text">Property description here</p>
               </div>
 
@@ -81,10 +89,14 @@ class PropertyDetail extends React.Component {
               <div className="reservation-content"> 
                 <div className="review-price">
                   <div className="property-full-price">
-                    Price here
+                    <div className="property-price">
+                      <div className="reservation-price">$&nbsp;{property.price}</div>
+                      <div className="reservation-night">&nbsp; / night</div>
+                    </div>
                   </div>
                   <div className="property-full-review">
-                    Review here
+                    <i className="review-star fas fa-star"></i>
+                    <div className="review-rating">{parseFloat(property.average_rating).toFixed(2)}</div>
                   </div>
                 </div>
                 <div className="calendar-guest">
