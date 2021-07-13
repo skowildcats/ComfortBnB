@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class BrowseMap extends React.Component {
   constructor(props) {
@@ -18,7 +19,12 @@ class BrowseMap extends React.Component {
 
     for (let i = 0; i < properties.length; i++) {
       let infowindow = new google.maps.InfoWindow({
-        content: "<div>"+properties[i].description+"</div>"
+        content: "<div class='marker-description'>"+properties[i].description+"</div>"+
+          "<div >"+ "</i>"+
+            "<div class='marker-review-rating'>"+parseFloat(properties[i].average_rating).toFixed(2)
+            +"  ("+properties[i].review_count+ " reviews)" +"</div>"+  
+            "<div class='marker-price'>"+"$"+properties[i].price+" / night" + "</div>"+
+          "</div>"
 
       });
       let marker = new google.maps.Marker({
@@ -27,7 +33,7 @@ class BrowseMap extends React.Component {
       map: this.map,
       animation: google.maps.Animation.DROP,
       })
-      marker.addListener("click", () => {
+      marker.addListener("click", () => { 
         infowindow.open({
           anchor: marker,
           map: this.map,
