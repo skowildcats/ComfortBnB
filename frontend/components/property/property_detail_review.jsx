@@ -1,4 +1,4 @@
-import {React} from 'react'
+import React from 'react'
 
 class PropertyDetailReview extends React.Component {
   constructor(props) {
