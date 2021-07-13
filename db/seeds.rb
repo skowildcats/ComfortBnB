@@ -12,8 +12,8 @@ Review.delete_all
 Reservation.delete_all
 User.delete_all
 
-descriptions = ["Unique Spacious Studio Loft in Lakeview", "Bridgeport 3F Renovated 2bed/1bath Apt. MONTHLY", "Cozy Studio Apartment",
-"2F Location! Steps from South Loop 1bed/1bath Apt.", "MedDistrict Spacious Renovated 1br Apt MONTHLY"]
+descriptions = ["Unique Studio Loft in East Village", "Cozy Condominium in Downtown Manhattan", "Spacious Hideaway Apartment in Chelsea",
+"Elegant Art Deco Home in SOHO", "Romantic High Rise Penthouse in Tribeca"]
 
 user = User.create!(username: "test", password: "test", fname: "test", lname: "test", email: "test")
 user2 = User.create!(username: "jc", password: "jc", fname: "jc", lname: "jc", email: "jc")

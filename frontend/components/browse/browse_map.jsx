@@ -14,10 +14,25 @@ class BrowseMap extends React.Component {
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
 
+    
+
     for (let i = 0; i < properties.length; i++) {
-      new google.maps.Marker({
+      let infowindow = new google.maps.InfoWindow({
+        content: "<div>"+properties[i].description+"</div>"
+
+      });
+      let marker = new google.maps.Marker({
       position: new google.maps.LatLng(properties[i].lat, properties[i].lng),
+      label: "$" + String(properties[i].price),
       map: this.map,
+      animation: google.maps.Animation.DROP,
+      })
+      marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map: this.map,
+          shoudlFocus: false,
+        })
       })
     }
   }
