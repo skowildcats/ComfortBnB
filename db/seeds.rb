@@ -18,6 +18,12 @@ descriptions = ["Unique Spacious Studio Loft in Lakeview", "Bridgeport 3F Renova
 user = User.create!(username: "test", password: "test", fname: "test", lname: "test", email: "test")
 user2 = User.create!(username: "jc", password: "jc", fname: "jc", lname: "jc", email: "jc")
 
+# NY:
+# top-left: 40.7642505, -73.9979308
+# top-right: 40.7631007, -73.9711885
+# bottom-right: 40.7495218, -73.9706277
+# bottom-left: 40.7495218, -73.9979308
+
 descriptions.each do |description|
   guests = rand(1..10)
   beds = rand(1..guests)
@@ -25,8 +31,8 @@ descriptions.each do |description|
   baths = rand(1..bedrooms)
   p = Property.create!(
     description: description,
-    lat: 37.775769,
-    lng: -122.434960,
+    lat: rand(40.7495218..40.7642505),
+    lng: rand(-73.9979308..-73.9711885),
     max_guests: guests,
     num_bedrooms: bedrooms,
     num_beds: beds,

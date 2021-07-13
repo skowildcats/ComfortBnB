@@ -18,15 +18,16 @@ class BrowsePage extends React.Component {
     const { properties } = this.props
     
     if (this.state.loading) {
-      null
-    } return (
-      <div className="browse-page">
-        <div className="browse-properties">
-          <PropertyIndex properties={properties}/>
+      return null
+    } else {
+      return (
+        <div className="browse-page">
+          <div className="browse-properties">
+            <PropertyIndex properties={properties}/>
+          </div>
+          <BrowseMap properties={properties}/>
         </div>
-        <BrowseMap />
-      </div>
-    )
+    )}
   }
 }
 
