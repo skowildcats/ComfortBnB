@@ -25,10 +25,6 @@
   color: black;
 }
 
-.trip-property:hover {
-  cursor: pointer;
-}
-
 .trip-property:hover{
   box-shadow: 0px 2px 15px lightgray;
 }
@@ -58,8 +54,7 @@
   height: 30%;
   font-size: 12px;
   padding-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding-left: 5%;
 }
 
 .reservation-show-more {
@@ -68,10 +63,29 @@
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  padding-top: 5%;
+  display: flex;
 }
 
-.reservation-show-more:hover {
+.show-more-text:hover, .cancel-reservation:hover, .reservation-information-description:hover {
   background-color: rgb(241, 240, 240);
-  border-radius: 0 0 20px 20px;
+}
+
+.show-more-text {
+  border-radius: 0 0 0 20px;
+}
+
+.show-more-text, .cancel-reservation {
+  width: 100%;
+  padding-top: 4%;
+  text-decoration: none;
+}
+
+.cancel-reservation {
+  border-left: 1px solid lightgray;
+  color: #e51f4e;
+  border-radius: 0 0 20px 0;
+}
+
+.reservation-image:hover, .reservation-information-description:hover, .reservation-show-more:hover {
+  cursor: pointer;
 }

@@ -14,19 +14,6 @@ export const receiveProperty = ({ property }) => ({
   property,
 });
 
-// export const receiveReview = ({ review, average_rating, author }) => ({
-//   type: RECEIVE_REVIEW,
-//   review,
-//   average_rating,
-//   author,
-// });
-
-// export const createReview = review => dispatch => (
-//   APIUtil.createReview(review).then(review => (
-//     dispatch(receiveReview(review))
-//   ))
-// );
-
 export const fetchProperties = filters => dispatch => {
   return APIUtil.fetchProperties(filters).then(properties => {
     return dispatch(receiveProperties(properties))
