@@ -14,27 +14,14 @@
 .home-link {
   font-weight: bold;
   padding-left: 60px;
-  margin-top: 30px;
   font-size: 20px;
   text-decoration: none;
   letter-spacing: -1px;
   color: #fe385c;
 }
 
-.home-link:link{
-  color: #fe385c;
-}
-.home-link:visited{
-  color: #fe385c;
-}
-.home-link:hover{
-  color: #fe385c;
-}
-.home-link:focus{
-  color: #fe385c;
-}
-.home-link:active{
-  color: #fe385c;
+.home-link:hover {
+  cursor: pointer;
 }
 
 .profile-list-icon {

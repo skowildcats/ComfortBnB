@@ -1,4 +1,4 @@
-import { UPDATE_FILTER } from "../actions/filter_actions";
+import { UPDATE_FILTER, CLEAR_FILTER } from "../actions/filter_actions";
 
 const defaultFilters = Object.freeze({
   minGuest: 1,
@@ -13,6 +13,8 @@ const filtersReducer = (state = defaultFilters, action) => {
         [action.filter]: action.value
       }
       return Object.assign({}, state, newFilter)
+    case CLEAR_FILTER:
+      return defaultFilters
     default:
       return state;
   }
