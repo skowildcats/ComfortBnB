@@ -102,14 +102,23 @@ class PropertyDetail extends React.Component {
                 <div className="calendar-guest">
                   <div className="property-full-calendar">
                     <div className="property-full-check-in">
-                      Check in
+                      <h3>
+                        <div>CHECK-IN</div>
+                        <input type="date" placeholder="Add dates" />
+                      </h3>
                     </div>
                       <div className="property-full-check-out">
-                      Check out
+                      <h3>
+                        <div>CHECKOUT</div>
+                        <input type="date" placeholder="Add dates" />
+                      </h3>
                     </div>
                   </div>
                   <div className="property-full-guest">
-                    Guest
+                    <h3>
+                      <div>GUESTS</div>
+                      <input type="text" placeholder="Add guests" />
+                    </h3>
                   </div>
                 </div>
                 <div className="check-availability">

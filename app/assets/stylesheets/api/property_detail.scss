@@ -74,7 +74,8 @@
   width: 27.5%;
   margin-left: 4.4%;
   box-shadow: 0px 3px 15px lightgray;
-  border-radius: 20px;
+  border-radius: 10px;
+  border: .5px solid lightgray;
   // border: 1px solid black;
   position: absolute;
 }
@@ -101,7 +102,7 @@
 .calendar-guest {
   height: 41%;
   border: 1px solid #b0b0b0;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .property-full-calendar {
@@ -120,6 +121,10 @@
 .property-full-guest {
   height: 50%;
   border-top: 1px solid #b0b0b0;
+}
+
+.property-full-guest div{
+  margin-bottom: 5px  ;
 }
 
 .check-availability {
@@ -212,3 +217,16 @@
 .reservation-night {
   margin-top: 5px;
 }
+
+.calendar-guest input {
+  border: 0;
+  padding: 0;
+}
+
+
+
+.calendar-guest h3 {
+  font-size: 12px;
+  padding-left: 10px;
+}
+
