@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import PropertyMovingReservation from './property_moving_reservation';
 
 class PropertyDetail extends React.Component {
   componentDidMount() {
@@ -28,7 +29,7 @@ class PropertyDetail extends React.Component {
 
 
   render() {
-    const { property } = this.props
+    const { currentUser, property, createReservation } = this.props
     this.scrollFunc()  
     
 
@@ -84,51 +85,7 @@ class PropertyDetail extends React.Component {
               </div>
           </div>
 
-          <div className="property-make-reservation">
-            <div className="moving-reservation">
-              <div className="reservation-content"> 
-                <div className="review-price">
-                  <div className="property-full-price">
-                    <div className="property-price">
-                      <div className="reservation-price">$&nbsp;{property.price}</div>
-                      <div className="reservation-night">&nbsp; / night</div>
-                    </div>
-                  </div>
-                  <div className="property-full-review">
-                    <i className="review-star fas fa-star"></i>
-                    <div className="review-rating">{parseFloat(property.average_rating).toFixed(2)}</div>
-                  </div>
-                </div>
-                <div className="calendar-guest">
-                  <div className="property-full-calendar">
-                    <div className="property-full-check-in">
-                      <h3>
-                        <div>CHECK-IN</div>
-                        <input type="date" placeholder="Add dates" />
-                      </h3>
-                    </div>
-                      <div className="property-full-check-out">
-                      <h3>
-                        <div>CHECKOUT</div>
-                        <input type="date" placeholder="Add dates" />
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="property-full-guest">
-                    <h3>
-                      <div>GUESTS</div>
-                      <input type="text" placeholder="Add guests" />
-                    </h3>
-                  </div>
-                </div>
-                <div className="check-availability">
-                  <button className="availability-button">
-                    Check availability
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PropertyMovingReservation property={property} currentUser={currentUser} createReservation={createReservation}/>
         </div>
         <div className="property-review">
           <div className="review-header">

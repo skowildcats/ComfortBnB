@@ -1,10 +1,10 @@
-export const createReservation = reservation => (
-  $.ajax({
+export const createReservation = reservation => {
+  return $.ajax({
     method: 'POST',
-    url: 'api/properties',
-    data: {reservation}
+    url: 'api/reservations',
+    data: { reservation, authenticity_token: $('[name="csrf-token"]')[0].content}
   })
-);
+};
 
 export const destroyReservation = id => (
   $.ajax({

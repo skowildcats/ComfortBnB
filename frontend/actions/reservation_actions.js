@@ -14,10 +14,11 @@ export const removeReservation = reservation => {
   reservation
 }}
 
-export const createReservation = reservation => dispatch => (
-  APIUtil.createReservation(reservation)
-  .then(() => dispatch(receiveReservation()))
-)
+export const createReservation = reservation => dispatch => {
+  return APIUtil.createReservation(reservation)
+  .then(() => {
+    return dispatch(receiveReservation())})
+}
 
 export const destroyReservation = id => dispatch => {
   return APIUtil.destroyReservation(id)
