@@ -1,6 +1,6 @@
 import React from 'react'
 import PropertyIndex from './property_index'
-// import BrowseMap from './browse_map'
+import BrowseMap from './browse_map'
 
 class BrowsePage extends React.Component {
   componentDidMount() {
@@ -24,9 +24,7 @@ class BrowsePage extends React.Component {
         <div className="browse-properties">
           <PropertyIndex properties={properties}/>
         </div>
-        <div className="browse-map">
-          {/* <BrowseMap /> */}
-        </div>
+        <BrowseMap />
       </div>
     )
   }

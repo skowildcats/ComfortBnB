@@ -7,6 +7,14 @@
   letter-spacing: -1px;
 }
 
+
+.browse-map {
+  margin-top: 72px;
+  width: 42%;
+  height: inherit;
+  border: 1px solid black;
+}
+
 .browse-header {
   margin-top: 45px;
   margin-bottom: 45px;
@@ -20,7 +28,8 @@
 }
 
 .browse-page {
-  height: calc(91vh)
+  height: calc(91vh);
+  display: flex;
 }
 
 .property-image {
