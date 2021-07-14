@@ -55,7 +55,7 @@
 }
 
 .property-full-description {
-  height: 815px;
+  height: 730px;
   width: 100%;
   display: flex;
 }
@@ -192,7 +192,6 @@
 
 .property-full-paragraph {  
   margin-top: 30px;
-  height: 280px;
   border-bottom: 1px solid lightgray
 }
 
@@ -202,7 +201,10 @@
 
 .property-detail-amenities {
   margin-top: 30px;
-  height: 390px;
+}
+
+.property-detail-amenities h2 {
+  margin-bottom: 30px;
 }
 
 .property-full-review {
@@ -230,3 +232,33 @@
   padding-left: 10px;
 }
 
+.paragraph-text {
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.amenity-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.amenity-icons div{
+  font-size: 18px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.show-all-amenities {
+  text-align: center;
+  width: 25%;
+  border: .5px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 12px;
+}
+
+.show-all-amenities:hover {
+  cursor: pointer;
+  background-color: rgb(241, 241, 241);
+}

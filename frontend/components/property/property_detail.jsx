@@ -14,12 +14,12 @@ class PropertyDetail extends React.Component {
 
   scrollFunc() {
     window.onscroll = function () {
-      if ($(window).scrollTop() >= 480 && $(window).scrollTop() <= 975) {
+      if ($(window).scrollTop() >= 480 && $(window).scrollTop() <= 895) {
         $(".moving-reservation").css("position", "fixed")
         $(".moving-reservation").css("transform", "translateY(-175%)")
-      } else if ($(window).scrollTop() >= 975) {
+      } else if ($(window).scrollTop() >= 895) {
         $(".moving-reservation").css("position", "absolute")
-        $(".moving-reservation").css("transform", "translateY(180%)")
+        $(".moving-reservation").css("transform", "translateY(150%)")
       } else {
         $(".moving-reservation").css("position", "absolute")
         $(".moving-reservation").css("transform", "translateY(0%)")
@@ -72,16 +72,32 @@ class PropertyDetail extends React.Component {
               </div>
               <div className="property-full-paragraph">
                 <h2 className="paragraph-header">All about {property.description}</h2>
-                <p className="paragraph-text">Property description here</p>
+                <p className="paragraph-text">
+                  Retreat to this getaway and enjoys the best that the city has to offer.
+                  Located in one of the city's most eclectic neighborhoods, 
+                  this is a lovely space to unwind and relax after a busy day whether it is work or play.
+                  Awake refreshed and ready for a day exploring the city via this clean, sunny apartment with impressive views.
+                  Experience true urban living in this beautifully decorated well furnished residence while indulging in the comfort and tranquility of this contemporary apartment.
+                </p>
               </div>
 
               <div className="property-detail-amenities">
                 <h2>
                   What this place offers
                 </h2>
-                <div className="amnity icons">
-                  Amenities/icons here
+                <div className="amenity-icons">
+                  <div><i className="fas fa-tv"></i> 50" HDTV</div>
+                  <div><i className="fas fa-utensils"></i> Kitchen</div>
+                  <div><i className="fas fa-wifi"></i> Wifi</div>
+                  <div><i className="fas fa-coffee"></i> Breakfast</div>
+                  <div><i className="fas fa-paw"></i> Pets allowed</div>
+                  <div><i className="fas fa-laptop"></i> Dedicated workspace</div>
+                  <div><i className="far fa-calendar"></i> Long term stays allowed</div>
+                  <div><i className="fas fa-parking"></i> Parking available</div>
+                  <div><i className="fas fa-bath"></i> Bathtub</div>
+                  <div><i className="far fa-snowflake"></i> Air conditioning</div>
                 </div>
+                <div className="show-all-amenities">Show all amenities</div>
               </div>
           </div>
 
