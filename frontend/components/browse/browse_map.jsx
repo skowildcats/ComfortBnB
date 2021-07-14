@@ -23,6 +23,10 @@ class BrowseMap extends React.Component {
       anchor: new google.maps.Point(0, 30)
     };
 
+    let infowindows = []
+    let markers = []
+    let idx = 0
+
     for (let i = 0; i < properties.length; i++) {
       let infowindow = new google.maps.InfoWindow({
         content: "<div class='marker-description'>"+properties[i].description+"</div>"+
@@ -33,6 +37,7 @@ class BrowseMap extends React.Component {
           "</div>"
 
       });
+      infowindows.push(infowindow)
       let marker = new google.maps.Marker({
       position: new google.maps.LatLng(properties[i].lat, properties[i].lng),
       label: "$" + String(properties[i].price),
@@ -40,13 +45,21 @@ class BrowseMap extends React.Component {
       animation: google.maps.Animation.DROP,
         icon: icon
       })
-      marker.addListener("click", () => { 
+      markers.push(marker)
+      marker.addListener("click", () => {
+        marker.setZIndex(++idx)
+        for (let i = 0; i < infowindows.length; i++) {
+          infowindows[i].close()
+        }
         infowindow.open({
           anchor: marker,
           map: this.map,
           shoudlFocus: false,
         })
       })
+      // infowindow.addListener("closeclick", () => {
+        
+      // })
     }
   }
 
