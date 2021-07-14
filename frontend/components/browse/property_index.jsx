@@ -12,7 +12,7 @@ class PropertyIndex extends React.Component {
 
     return (
       <div className="browse-index">
-        <h1 className="browse-header">Stays in ...</h1>
+        <h1 className="browse-header">Stays in New York</h1>
         {properties.map((property, idx) => (
           <PropertyIndexItem property={property} key={property.id} idx={idx}/>
         ))}
