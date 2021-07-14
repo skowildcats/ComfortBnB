@@ -31,7 +31,7 @@ class TripViewProperty extends React.Component {
     return(
       <div className="trip-property">
         <div onClick={this.redirectBrowse.bind(this)} className="reservation-image">
-          Image placeholder
+          <img className="trip-image" src={property.image_urls[0]}/>
         </div>
         <div className="reservation-information">
           <div className="reservation-information-date">
