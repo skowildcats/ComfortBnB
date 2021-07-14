@@ -24,7 +24,7 @@ class ProfileShow extends React.Component {
         <li> <div> Username </div>
           <p>{currentUser.username}</p>
         </li>
-        <button onClick={this.redirectTrip.bind(this)}> View Trips </button>
+        <div onClick={this.redirectTrip.bind(this)} className="view-trips"> View Trips </div>
         
       </div>
     )

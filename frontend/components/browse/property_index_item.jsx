@@ -14,7 +14,7 @@ class PropertyIndexItem extends React.Component {
     return (
       <div className="property-listing">
         <div className="property-image">
-          <ImageSlideshow idx={idx}/>
+          <ImageSlideshow idx={idx} property={property}/>
         </div>
         <Link to={`/browse/${property.id}`} className="property-content">
           <div className="property-description" >{property.description} </div>

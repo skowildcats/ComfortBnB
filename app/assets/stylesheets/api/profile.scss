@@ -30,3 +30,14 @@
   margin-bottom: 70px;
 }
 
+.view-trips {
+  border: 1px solid gray;
+  width: 25%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.view-trips:hover {
+  cursor: pointer;
+}

@@ -49,29 +49,29 @@ class ImageSlideshow extends React.Component {
   }
 
   render() {
-    let {idx} = this.props
+    let {idx, property} = this.props
 
     return (
       <div className="slideshow">
         <div className="slideshow-container">
           <div className="mySlides fade">
-            <img src={`https://picsum.photos/300/304?random=${idx * 5 + 1}`} />
+            <img src={property.image_urls[0]} />
           </div>
 
           <div className="mySlides fade">
-            <img src={`https://picsum.photos/300/304?random=${idx * 5 + 2}`} />
+            <img src={property.image_urls[1]} />
           </div>
 
           <div className="mySlides fade">
-            <img src={`https://picsum.photos/300/304?random=${idx * 5 + 3}`} />
+            <img src={property.image_urls[2]} />
           </div>
 
           <div className="mySlides fade">
-            <img src={`https://picsum.photos/300/304?random=${idx * 5 + 4}`} />
+            <img src={property.image_urls[3]} />
           </div>
 
           <div className="mySlides fade">
-            <img src={`https://picsum.photos/300/304?random=${idx * 5 + 5}`} />
+            <img src={property.image_urls[4]} />
           </div>
 
           <a className="prev" onClick={this.changeSlide.bind(this, 'prev')}>

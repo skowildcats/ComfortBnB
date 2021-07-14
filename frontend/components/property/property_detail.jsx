@@ -53,13 +53,13 @@ class PropertyDetail extends React.Component {
         </div>
         <div className="property-detail-image">
           <div className="main-image">
-            <img src={`https://picsum.photos/300/304?random=1`} />
+            <img src={property.image_urls[0]} />
           </div>
           <div className="sub-image">
-            <img src={`https://picsum.photos/300/304?random=2`} />
-            <img className="sub-image-2" src={`https://picsum.photos/300/304?random=3`} />
-            <img src={`https://picsum.photos/300/304?random=4`} />
-            <img className="sub-image-4" src={`https://picsum.photos/300/304?random=5`} />
+            <img src={property.image_urls[1]} />
+            <img className="sub-image-2" src={property.image_urls[2]} />
+            <img src={property.image_urls[3]} />
+            <img className="sub-image-4" src={property.image_urls[4]} />
           </div>
         </div>
         <div className="property-full-description">
