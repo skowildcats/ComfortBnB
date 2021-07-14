@@ -15,7 +15,7 @@ class BrowsePage extends React.Component {
   }
 
   render() {
-    const { properties } = this.props
+    const { properties, filters, mapSettings} = this.props
     
     if (this.state.loading) {
       return null
@@ -23,9 +23,9 @@ class BrowsePage extends React.Component {
       return (
         <div className="browse-page">
           <div className="browse-properties">
-            <PropertyIndex properties={properties}/>
+            <PropertyIndex properties={properties} filters={filters}/>
           </div>
-          <BrowseMap properties={properties}/>
+          <BrowseMap properties={properties} mapSettings={mapSettings[filters.location]}/>
         </div>
     )}
   }

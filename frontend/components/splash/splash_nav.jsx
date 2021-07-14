@@ -58,6 +58,7 @@ class SplashNav extends React.Component {
     document.querySelector(".nav-search").style.display = 'none'
     document.querySelector(".nav-full-search").style.display = 'block'
     document.querySelector(".nav-full-search").style.display = 'block'
+    $(".search-location-wrapper").css("margin-left", "0vw")
     document.addEventListener("click", this.searchEvent)
   }
 

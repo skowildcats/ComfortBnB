@@ -8,11 +8,11 @@ class PropertyIndex extends React.Component {
   }
 
   render() {
-    const {properties} = this.props
+    const {properties, filters} = this.props
 
     return (
       <div className="browse-index">
-        <h1 className="browse-header">Stays in New York</h1>
+        <h1 className="browse-header">Stays in {filters.location}</h1>
         <h3>Browse all {properties.length} listings </h3>
         {properties.map((property, idx) => (
           <PropertyIndexItem property={property} key={property.id} idx={idx}/>

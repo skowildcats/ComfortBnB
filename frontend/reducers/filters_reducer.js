@@ -2,6 +2,7 @@ import { UPDATE_FILTER, CLEAR_FILTER } from "../actions/filter_actions";
 
 const defaultFilters = Object.freeze({
   minGuest: 1,
+  location: "New York",
 })
 
 const filtersReducer = (state = defaultFilters, action) => {

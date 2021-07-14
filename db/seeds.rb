@@ -15,7 +15,10 @@ User.delete_all
 descriptions = ["Unique Studio Loft in ", "Cozy Condominium in ", "Spacious Hideaway Apartment in ",
 "Elegant Art Deco Home in ", "Romantic High Rise Penthouse in ", "Sundrenched Apartment in ", "Modern and Charming Studio in ", "Luxury Flat in "]
 
-new_york = ["East Village", "Lower Manhattan", "Chelsea", "SOHO", "Tribeca", "Garment District", "Upper East Side", "Greenwich Village", "Murray Hill", "Lower East Side", "Little Italy", "West Village"]
+locations = {"New York" => ["East Village", "Lower Manhattan", "Chelsea", "SOHO", "Tribeca", "Garment District", "Upper East Side", "Greenwich Village", "Murray Hill", "Lower East Side", "Little Italy", "West Village"],
+"Chicago" => ["River North", "Gold Coast", "Old Town", "Streeterville", "West Loop", "South Loop", "Lincoln Park", "Wicker Park", "Noble Square", "Bucktown", "East Loop"],
+"San Francisco" =>["Mission Bay", "Downtown San Francsco", "Alamo Square", "Pacific Heights", "Marina", "Financial District", "North Waterfront", "Potrero Hill", "Hayes Valley", "Noe Valley", "Twin Peaks", "Forest Hills"],
+"Los Angeles" => ["Venice", "Santa Monica", "Pacific Palisades", "Brentwood", "Bel-Air", "Beverly Hills", "Playa Vista", "Hollywood", "Beverly Crest", "Studio City", "Hollywood", "Westwood"]}
 
 image_url = ["https://images.unsplash.com/photo-1487695652027-48e475bfa86f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y296eSUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
 "https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y296eSUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -81,52 +84,58 @@ image_url = ["https://images.unsplash.com/photo-1487695652027-48e475bfa86f?ixid=
 user = User.create!(username: "test", password: "test", fname: "test", lname: "test", email: "test")
 user2 = User.create!(username: "jc", password: "jc", fname: "jc", lname: "jc", email: "jc")
 
-# NY:
+mapSeed = {"New York" => {:lat => (40.7495218..40.7642505), :lng => (-73.9979308..-73.9711885)},
+"Chicago" => {:lat => (41.8754158..41.8961918), :lng => (-87.6484818..-87.6197498)},
+"San Francisco" => {:lat => (37.741232..37.7914978), :lng => (-122.4670407..-122.3912764)},
+"Los Angeles" => {:lat => (33.9581022..34.0684897), :lng => (-118.4321643..-118.2148544)}}
 # top-left: 40.7642505, -73.9979308
 # top-right: 40.7631007, -73.9711885
 # bottom-right: 40.7495218, -73.9706277
 # bottom-left: 40.7495218, -73.9979308
 
-rand(20..25).times do |i|
-  guests = rand(1..10)
-  beds = rand(1..guests)
-  bedrooms = rand(1..beds)
-  baths = rand(1..bedrooms)
-  img_arr = image_url.sample(5)
-  p = Property.create!(
-    description: descriptions.sample() + new_york.sample(),
-    lat: rand(40.7495218..40.7642505),
-    lng: rand(-73.9979308..-73.9711885),
-    max_guests: guests,
-    num_bedrooms: bedrooms,
-    num_beds: beds,
-    num_baths: baths,
-    price: rand(50..200),
-    image_urls: img_arr,
-  )
-
-  rand(10..20).times do |i|
-    Review.create!(
-      body: "eh",
-      rating: rand(3..5),
-      property_id: p.id,
-      author_id: 6
+locations.each_with_index do |(city, neighborhood), idx|
+  rand(10..15).times do |i|
+    guests = rand(1..10)
+    beds = rand(1..guests)
+    bedrooms = rand(1..beds)
+    baths = rand(1..bedrooms)
+    img_arr = image_url.sample(5)
+    p = Property.create!(
+      description: descriptions.sample() + neighborhood.sample(),
+      lat: rand(mapSeed[city][:lat]),
+      lng: rand(mapSeed[city][:lng]),
+      max_guests: guests,
+      num_bedrooms: bedrooms,
+      num_beds: beds,
+      num_baths: baths,
+      price: rand(50..200),
+      image_urls: img_arr,
+      city: city
     )
+
+    rand(10..20).times do |i|
+      Review.create!(
+        body: "eh",
+        rating: rand(3..5),
+        property_id: p.id,
+        author_id: 6
+      )
+    end
+
+
+    rand(0..1).times do |i| 
+      checkIn = rand(1..20)
+      checkOut = rand(checkIn+1..28)
+      Reservation.create!(
+        num_guests: 3,
+        property_id: p.id,
+        user_id: user.id,
+        checkin_date: DateTime.new(2021,7,checkIn),
+        checkout_date: DateTime.new(2021,7,checkOut),
+      )
+    end
+
   end
-
-
-  3.times do |i| 
-    checkIn = rand(1..20)
-    checkOut = rand(checkIn+1..28)
-    Reservation.create!(
-      num_guests: 3,
-      property_id: p.id,
-      user_id: user.id,
-      checkin_date: DateTime.new(2021,7,checkIn),
-      checkout_date: DateTime.new(2021,7,checkOut),
-    )
-  end
-
 end
 
 

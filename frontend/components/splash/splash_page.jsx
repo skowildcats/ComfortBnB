@@ -9,6 +9,13 @@ class SplashPage extends React.Component {
     super(props)
   }
 
+  randomLocation() {
+    let locations = ["New York", "Chicago", "San Francisco", "Los Angeles"]
+    let location = locations[Math.floor(Math.random() * locations.length)]
+    this.props.updateFilter('location', location)
+    this.props.history.push('/browse')
+  }
+
   render() {
     return (
       <div className="splash-search">
@@ -16,9 +23,9 @@ class SplashPage extends React.Component {
         <SearchBarContainer  />
         <div className="splash-content">
           <div className="splash-body">
-            <Link to="/browse" className="splash-text-background">
+            <div onClick={this.randomLocation.bind(this)} className="splash-text-background">
               <div className="splash-text">Take me to a comfort place</div>
-            </Link>
+            </div>
             </div>
           <h1 className="splash-explore"> Explore nearby
             <div className="explore-cities">

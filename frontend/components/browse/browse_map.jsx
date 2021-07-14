@@ -7,10 +7,10 @@ class BrowseMap extends React.Component {
   } 
 
   componentDidMount() {
-    const {properties} = this.props
+    const {properties, mapSettings} = this.props
     const mapOptions = {
-      center: { lat: 40.76, lng: -73.98 },
-      zoom: 14
+      center: { lat: mapSettings.cords[0], lng: mapSettings.cords[1]},
+      zoom: mapSettings.zoom
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);

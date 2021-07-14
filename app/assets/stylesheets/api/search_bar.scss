@@ -14,7 +14,6 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  // position: absolute;
 }
 
 .search-bar div {
@@ -76,8 +75,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
   width: 40%;
 }
 
-.search-location input {
-  cursor: text;
+.search-location input{
+  cursor: pointer;
 }
 
 .search-check-in {
@@ -132,4 +131,38 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .search-bar div:hover{
   cursor: pointer;
   background-color: #e0e0e0;
+}
+
+.search-location-wrapper {
+  width: 15vw;
+  margin-top: 10px;
+  position: absolute;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 22vw;
+  display: none;
+}
+
+.search-location-wrapper div {
+  border: 0;
+  font-size: 12px;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+
+.search-location-city-ny {
+  border-radius: 15px 15px 0 0;
+}
+
+.search-location-city-la {
+  border-radius: 0 0 15px 15px ;
+}
+
+
+.search-location-wrapper div:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }

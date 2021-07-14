@@ -7,9 +7,10 @@ class Api::PropertiesController < ApplicationController
   def index
     properties = Property.all
     properties = properties.where(max_guests: guest_range)
+    properties = properties.where(city: params[:location])
 
     @properties = properties.includes(:reviews)
-    render :index
+    render :index 
   end
 
   def create

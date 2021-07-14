@@ -1,6 +1,6 @@
 import React from "react";
 import SplashNavContainer from "./splash/splash_nav_container"
-import SplashPage from "./splash/splash_page";
+import SplashPageContainer from "./splash/splash_page_container"
 import SplashModal from "./splash/splash_modal";
 import { Link, Switch, Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -14,7 +14,7 @@ import TripViewContainer from './trip/trip_view_container'
 const App = () => (
   <>
     <SplashNavContainer />
-    <Route exact path="/" component={SplashPage} />
+    <Route exact path="/" component={SplashPageContainer} />
     <Switch>
       <Route exact path="/" component={NavListener} />
       <ProtectedRoute exact path="/browse" component={BrowsePageContainer} />
