@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class BrowseMap extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class BrowseMap extends React.Component {
   componentDidMount() {
     const {properties} = this.props
     const mapOptions = {
-      center: { lat: 40.75, lng: -73.98 },
-      zoom: 13
+      center: { lat: 40.76, lng: -73.98 },
+      zoom: 14
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -27,16 +27,19 @@ class BrowseMap extends React.Component {
     let markers = []
     let idx = 0
 
+
     for (let i = 0; i < properties.length; i++) {
       let infowindow = new google.maps.InfoWindow({
         content: "<div class='marker-description'>"+properties[i].description+"</div>"+
-          "<div >"+ "</i>"+
+          "<div >"+ 
             "<div class='marker-review-rating'>"+parseFloat(properties[i].average_rating).toFixed(2)
-            +"  ("+properties[i].review_count+ " reviews)" +"</div>"+  
-            "<div class='marker-price'>"+"$"+properties[i].price+" / night" + "</div>"+
+            +"  ("+properties[i].review_count+ " reviews)" +"</div>" +  
+              ("<div class='marker-price'>"+"$"+properties[i].price+" / night" + "</div>"+
+              "<div id='listing-link'>" +"View listing" + "</div>") + 
           "</div>"
 
       });
+      
       infowindows.push(infowindow)
       let marker = new google.maps.Marker({
       position: new google.maps.LatLng(properties[i].lat, properties[i].lng),
@@ -56,12 +59,15 @@ class BrowseMap extends React.Component {
           map: this.map,
           shoudlFocus: false,
         })
+        setTimeout(() => { document.getElementById("listing-link").addEventListener("click", this.redirectBrowse.bind(this, properties[i])) }, 300)
       })
-      // infowindow.addListener("closeclick", () => {
-        
-      // })
     }
   }
+
+  redirectBrowse(property) {
+    this.props.history.push(`browse/${property.id}`)
+  }
+
 
   render() {
     return(
@@ -70,4 +76,4 @@ class BrowseMap extends React.Component {
   }
 }
 
-export default BrowseMap
+export default withRouter(BrowseMap)

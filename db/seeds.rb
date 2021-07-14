@@ -12,8 +12,10 @@ Review.delete_all
 Reservation.delete_all
 User.delete_all
 
-descriptions = ["Unique Studio Loft in East Village", "Cozy Condominium in Downtown Manhattan", "Spacious Hideaway Apartment in Chelsea",
-"Elegant Art Deco Home in SOHO", "Romantic High Rise Penthouse in Tribeca"]
+descriptions = ["Unique Studio Loft in ", "Cozy Condominium in ", "Spacious Hideaway Apartment in ",
+"Elegant Art Deco Home in ", "Romantic High Rise Penthouse in ", "Sundrenched Apartment in ", "Modern and Charming Studio in ", "Luxury Flat in "]
+
+new_york = ["East Village", "Lower Manhattan", "Chelsea", "SOHO", "Tribeca", "Garment District", "Upper East Side", "Greenwich Village", "Murray Hill", "Lower East Side", "Little Italy", "West Village"]
 
 image_url = ["https://images.unsplash.com/photo-1487695652027-48e475bfa86f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y296eSUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
 "https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y296eSUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -33,7 +35,47 @@ image_url = ["https://images.unsplash.com/photo-1487695652027-48e475bfa86f?ixid=
 "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2UlMjBmdXJuaXR1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60  ",
 "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2UlMjBmdXJuaXR1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
 "https://images.unsplash.com/photo-1532372576444-dda954194ad0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjBmdXJuaXR1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-"https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+"https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560185008-186576e0f1e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzd8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560184897-6cdec21b9962?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTZ8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560184897-502a475f7a0d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAyfHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560449752-8b6023e2ab5a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTh8fGhvdXNlJTIwZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560185009-5bf9f2849488?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA1fHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560185007-5f0bb1866cab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEzfHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1606136979518-d6fdea0cf4c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEyfHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1505691723518-36a5ac3be353?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE0fHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560185893-d9680d601385?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1606202598125-e2077bb5ebcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE4fHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1604238753952-9b7cb3895e08?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMxfHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1505692952047-1a78307da8f2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTIzfHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1560184897-cca79b749615?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTM3fHxob3VzZSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1600210492493-0946911123ea?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1615529182904-14819c35db37?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1618221710640-c0eaaa2adb49?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1613545325268-9265e1609167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2l0Y2hlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1556911220-bff31c812dba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2l0Y2hlbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1598546720078-8659863bc47d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8a2l0Y2hlbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0Y2hlbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1550223026-0d6fd780c560?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1588854337236-6889d631faa8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1574739782594-db4ead022697?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1591189863345-9db058f9f8ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1543503103-f94a0036ed9d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1598546722530-8d613c406114?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1556909172-54557c7e4fb7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1571843439991-dd2b8e051966?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fGtpdGNoZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1564540583246-934409427776?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmF0aHJvb218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmF0aHJvb218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1552454799-ca5cfdc612c8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1564540579594-0930edb6de43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1595515769499-0f61fc8db2e9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1609946860441-a51ffcf22208?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+"https://images.unsplash.com/photo-1600488999585-e4364713b90a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjF8fGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
 ]
 
 user = User.create!(username: "test", password: "test", fname: "test", lname: "test", email: "test")
@@ -45,14 +87,14 @@ user2 = User.create!(username: "jc", password: "jc", fname: "jc", lname: "jc", e
 # bottom-right: 40.7495218, -73.9706277
 # bottom-left: 40.7495218, -73.9979308
 
-descriptions.each do |description|
+rand(20..25).times do |i|
   guests = rand(1..10)
   beds = rand(1..guests)
   bedrooms = rand(1..beds)
   baths = rand(1..bedrooms)
   img_arr = image_url.sample(5)
   p = Property.create!(
-    description: description,
+    description: descriptions.sample() + new_york.sample(),
     lat: rand(40.7495218..40.7642505),
     lng: rand(-73.9979308..-73.9711885),
     max_guests: guests,
