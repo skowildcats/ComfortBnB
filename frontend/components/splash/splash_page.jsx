@@ -16,6 +16,11 @@ class SplashPage extends React.Component {
     this.props.history.push('/browse')
   }
 
+  redirectBrowse(location) {
+    this.props.updateFilter('location', location)
+    this.props.history.push('/browse')
+  }
+
   render() {
     return (
       <div className="splash-search">
@@ -29,7 +34,7 @@ class SplashPage extends React.Component {
             </div>
           <h1 className="splash-explore"> Explore nearby
             <div className="explore-cities">
-              <div className="city-content"> 
+              <div onClick={this.redirectBrowse.bind(this, "Chicago")} className="city-content"> 
                 <div className="city-image chicago">
                 </div> 
                 <div className="city-name">
@@ -39,8 +44,8 @@ class SplashPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="city-content">
-                <div className="city-image new-york">
+            <div onClick={this.redirectBrowse.bind(this, "New York")}className="city-content">
+              <div className="city-image new-york">
                 </div>
                 <div className="city-name">
                   New York
@@ -49,26 +54,26 @@ class SplashPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="city-content">
-                <div className="city-image san-francisco">
-                </div>
-                <div className="city-name">
-                  San Francisco
-                  <div className="city-description">
-                    Golden gate bridge
-                  </div>
+            <div onClick={this.redirectBrowse.bind(this, "San Francisco")} className="city-content">
+              <div className="city-image san-francisco">
+              </div>
+              <div className="city-name">
+                San Francisco
+                <div className="city-description">
+                  Golden gate bridge
                 </div>
               </div>
-              <div className="city-content">
-                <div className="city-image los-angeles">
-                </div>
-                <div className="city-name">
-                  Los Angeles
-                  <div className="city-description">
-                    Hollywood sign
-                  </div>
+            </div>
+            <div onClick={this.redirectBrowse.bind(this, "Los Angeles")}className="city-content">
+              <div className="city-image los-angeles">
+              </div>
+              <div className="city-name">
+                Los Angeles
+                <div className="city-description">
+                  Hollywood sign
                 </div>
               </div>
+            </div>
             </div>
           </h1>
         </div>
