@@ -40,6 +40,10 @@ class Api::ReservationsController < ApplicationController
     render json: @reservation
   end
 
+  def update
+    @reservation = Reservation.find(params[:id])
+  end
+
   def reservation_params
     params.require(:reservation).permit(:checkin_date, :checkout_date, :num_guests, :user_id, :property_id)
   end

@@ -58,6 +58,11 @@ class PropertyMovingReservation extends React.Component {
 
   render() {
     const {property} = this.props 
+    let year = String(new Date().getFullYear())
+    let month, day
+    new Date().getMonth() + 1 < 10 ? month = "0" + String(new Date().getMonth() + 1) : month = String(new Date().getMonth() + 1)
+    new Date().getDate() < 10 ? day = "0" + String(new Date().getDate()) : day = String(new Date().getDate())
+    let today = year + "-" + month + "-" + day
 
     let reservationTop
 
@@ -94,7 +99,7 @@ class PropertyMovingReservation extends React.Component {
                 <div className="property-full-check-in">
                   <h3>
                     <div>CHECK-IN</div>
-                    <input onChange={this.handleCheckIn("checkin_date")} type="date" placeholder="Add dates" />
+                    <input onChange={this.handleCheckIn("checkin_date")} type="date" value={today} placeholder="Add dates" />
                   </h3>
                 </div>
                 <div className="property-full-check-out">
