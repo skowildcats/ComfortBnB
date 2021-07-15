@@ -26,7 +26,10 @@ class PropertyIndexItem extends React.Component {
             <div> <div className="bullet-marker">&#183; </div> {property.num_baths === 1 ? "1 bath" : `${property.num_baths} baths`}</div>
           </div>
           <div className="property-amenities">
-            Amenities Placeholder
+            <div> TV</div>
+            <div> <div className="bullet-marker">&#183; </div> Kitchen</div>
+            <div> <div className="bullet-marker">&#183; </div> Wifi</div>
+            <div> <div className="bullet-marker">&#183; </div> Breakfast</div>
           </div>
           <div className="property-content-bottom"> 
             <div className="property-review-rating">

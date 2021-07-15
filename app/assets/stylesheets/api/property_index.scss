@@ -51,6 +51,11 @@
   font-size: 13px;
   margin-top: 5px;
   flex-grow: 2.4;
+  display: flex;
+}
+
+.property-amenities div {
+  display: flex;
 }
 
 .property-content-bottom {
