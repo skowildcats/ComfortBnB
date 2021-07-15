@@ -6,8 +6,11 @@ class Api::PropertiesController < ApplicationController
 
   def index
     properties = Property.all
-    properties = properties.where(max_guests: guest_range)
-    properties = properties.where(city: params[:location])
+    
+    if !params[:location].nil? 
+      properties = properties.where(max_guests: guest_range)
+      properties = properties.where(city: params[:location])
+    end
 
     @properties = properties.includes(:reviews)
     render :index 

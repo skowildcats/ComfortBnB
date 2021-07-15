@@ -68,7 +68,7 @@ class SplashNav extends React.Component {
   }
 
   render() {
-    const {currentUser, logout, login} = this.props
+    const {currentUser, logout, login, updateFilters} = this.props
 
     const splashPage = () => (
       <div className="splash-nav">

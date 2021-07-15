@@ -101,7 +101,7 @@ class PropertyDetail extends React.Component {
               </div>
           </div>
 
-          <PropertyMovingReservation property={property} currentUser={currentUser} createReservation={createReservation}/>
+          <PropertyMovingReservation property={property} currentUser={currentUser} createReservation={createReservation} />
         </div>
         <div className="property-review">
           <div className="review-header">

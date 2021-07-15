@@ -12,7 +12,7 @@ export const clearFilter = () => ({
 })  
 
 export const updateFilter = (filter, value) => (dispatch) => {
-  dispatch(changeFilter(filter, value));
+  dispatch(changeFilter(filter, value))
 };
 
 export const clearFilters = () => dispatch => {

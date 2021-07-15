@@ -20,6 +20,12 @@ export const fetchProperties = filters => dispatch => {
   })
 };
 
+export const fetchAllProperties = () => dispatch => {
+  return APIUtil.fetchAllProperties().then(properties => {
+    return dispatch(receiveProperties(properties))
+  } )
+}
+
 export const fetchProperty = id => dispatch => {
   return APIUtil.fetchProperty(id).then(payload => {
     return dispatch(receiveProperty(payload))

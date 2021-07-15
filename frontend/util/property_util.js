@@ -13,6 +13,14 @@ export const fetchProperty = id => (
   })
 );
 
+export const fetchAllProperties = data => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/properties',
+    data
+  })
+);
+
 // export const createReview = review => (
 //   $.ajax({
 //     method: 'POST',
