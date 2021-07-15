@@ -126,6 +126,11 @@ class SplashAuth extends React.Component{
         </section>
       </div>
       <div className="profile-dropdown">
+        <div className="icon-list">
+          <a href="https://github.com/skowildcats"><i className="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jon-chen67/"><i className="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/jon-chen67/"><i className="fab fa-angellist"></i></a>
+        </div>
         <button onClick={this.toggleDropDown.bind(this)} className="profile-list-icon">
           <i className="profile-list fas fa-bars"></i>
           {userIcon}
