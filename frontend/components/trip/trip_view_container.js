@@ -4,12 +4,11 @@ import {fetchUser} from '../../actions/session_actions'
 import { fetchProperties, fetchAllProperties } from '../../actions/property_actions';
 import { destroyReservation } from '../../actions/reservation_actions';
 
-const mapStateToProps = ({ session, entities: { users, properties, reservations }, ui: { filters }}) => {
+const mapStateToProps = ({ session, entities: { users, properties }, ui: { filters }}) => {
   return {
     filters: filters,
     currentUser: users[session.id],
     properties: properties,
-    reservations: reservations,
   };
 };
 

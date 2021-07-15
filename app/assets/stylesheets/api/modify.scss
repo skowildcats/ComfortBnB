@@ -1,0 +1,60 @@
+.reservation-modify {
+  padding-top: 4%;
+  width: 100%;
+  border-radius: 0 0 0 20px;
+}
+
+.reservation-modify:hover{
+  background-color: rgb(241, 240, 240);
+}
+
+#reservation-session-modal {
+  display: none ;
+}
+
+.reservation-close-modal {
+  position: absolute;
+  font-size: 150%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  margin-left: 5%;
+  margin-top: 3%;
+  background-color: inherit;
+}
+
+.reservation-close-modal:hover {
+  cursor: pointer;
+}
+
+.reservation-modal-screen{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.reservation-modal-form{
+  position: relative;
+  overflow-y: auto;
+  width: 575px;
+  height: 575px;
+  min-width: 300px;
+  min-height: 300px;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3%;
+  background: whitesmoke;
+}
+
+@media only screen and (max-width: 500px) {
+  .reservation-modal-form {
+    width: 100%;
+  }
+}
+
