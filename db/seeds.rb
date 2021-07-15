@@ -90,7 +90,12 @@ mapSeed = {"New York" => {:lat => (40.7495218..40.7642505), :lng => (-73.9979308
 "Los Angeles" => {:lat => (33.9581022..34.0684897), :lng => (-118.4321643..-118.2148544)}}
 
 
-reviews = {}
+reviews = ["Not much to say, very accurate posting, and the location was really really nice!",
+"Beautiful rooftop view...clean comfortBnB. I would recommend renting from here.",
+"Great location with great views",
+"The comfortBnB was spacious and clean. It’s in a great location as well!",
+"Great communication! And the host was very accommodating",
+"Fantastic location!"]
 
 locations.each_with_index do |(city, neighborhood), idx|
   rand(10..15).times do |i|
@@ -114,7 +119,7 @@ locations.each_with_index do |(city, neighborhood), idx|
 
     rand(10..20).times do |i|
       Review.create!(
-        body: "eh",
+        body: reviews.sample(),
         rating: rand(3..5),
         property_id: p.id,
         author_id: 6

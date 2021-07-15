@@ -1,3 +1,27 @@
-// Place all the styles related to the api/reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.review-header {
+  display: flex;
+  font-size: 23px;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.user-reviews {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.user-review-content {
+  width: 50%;
+  padding-bottom: 130px;
+}
+
+.user-review-name {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+.user-review-body{
+  font-size: 15px;
+}

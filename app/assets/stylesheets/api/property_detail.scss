@@ -148,9 +148,9 @@
 }
 
 
-.property-review {
-  height: 1000px;
+.property-review {  
   border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 .back-symbol {
@@ -195,9 +195,6 @@
   border-bottom: 1px solid lightgray
 }
 
-.h2 {
- font-size: 22px;
-}
 
 .property-detail-amenities {
   margin-top: 30px;
@@ -265,4 +262,18 @@
 
 .amenity-icons i {
   width: 8%;
+} 
+
+.property-map-header {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
+
+.property-map {
+  margin-top: 20px;
+  height: 475px;
+}
+
+
+
+
