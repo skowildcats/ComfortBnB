@@ -127,17 +127,17 @@ locations.each_with_index do |(city, neighborhood), idx|
     end
 
 
-    rand(0..1).times do |i| 
-      checkIn = rand(1..20)
-      checkOut = rand(checkIn+1..28)
-      Reservation.create!(
-        num_guests: 3,
-        property_id: p.id,
-        user_id: user.id,
-        checkin_date: DateTime.new(2021,7,checkIn),
-        checkout_date: DateTime.new(2021,7,checkOut),
-      )
-    end
+    # rand(0..1).times do |i| 
+    #   checkIn = rand(1..20)
+    #   checkOut = rand(checkIn+1..28)
+    #   Reservation.create!(
+    #     num_guests: 3,
+    #     property_id: p.id,
+    #     user_id: user.id,
+    #     checkin_date: DateTime.new(2021,7,checkIn),
+    #     checkout_date: DateTime.new(2021,7,checkOut),
+    #   )
+    # end
 
   end
 end
