@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/reservation_util'
+import { addError } from './error_actions';
 
 export const RECEIVE_RESERVATION = "RECEIVE_RESERVATION"
 export const REMOVE_RESERVATION = "REMOVE_RESERVATION"
@@ -17,7 +18,10 @@ export const removeReservation = reservation => {
 export const createReservation = reservation => dispatch => {
   return APIUtil.createReservation(reservation)
   .then(() => {
-    return dispatch(receiveReservation())})
+    return dispatch(receiveReservation())},
+    (err) => {
+      dispatch(addError(err.responseJSON))
+    })
 }
 
 export const destroyReservation = id => dispatch => {

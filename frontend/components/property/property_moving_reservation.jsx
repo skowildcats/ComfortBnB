@@ -4,50 +4,103 @@ import {withRouter} from 'react-router-dom'
 class PropertyMovingReservation extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {checkin_date: null, checkout_date: null, num_guests: 1, user_id: this.props.currentUser.id, property_id: this.props.property.id}
+    this.state = { checkin_date: new Date().setUTCHours(0, 0, 0, 0), checkout_date: new Date().setUTCHours(0, 0, 0, 0) + 86400000, num_guests: 1, user_id: this.props.currentUser.id, property_id: this.props.property.id}
   }
 
   handleForm(field) {
-    return e => this.setState({[field]: e.currentTarget.value})
+    return e => {
+      this.setState({ [field]: e.currentTarget.value })
+    }
+  }
+
+  handleCheckIn(field) {
+    return e => {
+      this.checkIn(e.currentTarget.value)
+      this.setState({[field]: e.currentTarget.value})
+    }
+  }
+
+  handleCheckOut(field) {
+    return e => {
+      this.checkOut(e.currentTarget.value)
+      this.setState({ [field]: e.currentTarget.value})
+    }
+  }
+
+  checkIn(date) {
+    if (new Date().setUTCHours(0, 0, 0, 0) - 86400000 > new Date(date).setUTCHours(0, 0, 0, 0)) {
+      this.props.addError(["Please select a date after today"])
+    } else {
+      this.props.clearErrors()
+    }
+  }
+
+  checkOut(date) {
+    if (new Date(date).setUTCHours(0, 0, 0, 0) <= new Date(this.state.checkin_date).setUTCHours(0,0,0,0)) {
+      this.props.addError(["Please select a date after check in date"])
+    } else {
+      this.props.clearErrors()
+    }
   }
 
   submitReservation(e) {
     e.preventDefault()
     const reservation = Object.assign({}, this.state)
-    this.props.createReservation(reservation).then(()=>this.props.history.push('/trips'))
+    this.props.createReservation(reservation).then(()=> {
+      if (this.props.errors.length === 0) {
+        this.props.history.push('/trips')
+      }
+    }, () => {
+      this.props.addError(["Please select both check in and checkout dates"])})
+      // ()=>this.props.history.push('/trips'))
+    // ()=>this.props.addError(["Please select both check in and checkout dates"]))
   }
 
   render() {
     const {property} = this.props 
 
+    let reservationTop
+
+    if (this.props.errors.length > 0) {
+      reservationTop = <ul className="reservation-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    } else {
+      reservationTop = <div className="review-price">
+        <div className="property-full-price">
+          <div className="property-price">
+            <div className="reservation-price">$&nbsp;{property.price}</div>
+            <div className="reservation-night">&nbsp; / night</div>
+          </div>
+        </div>
+        <div className="property-full-review">
+          <i className="review-star fas fa-star"></i>
+          <div className="review-rating">{parseFloat(property.average_rating).toFixed(2)}</div>
+        </div>
+      </div>
+    }
+
     return (
       <div className="property-make-reservation">
         <div className="moving-reservation">
           <form onSubmit={this.submitReservation.bind(this)} className="reservation-content">
-            <div className="review-price">
-              <div className="property-full-price">
-                <div className="property-price">
-                  <div className="reservation-price">$&nbsp;{property.price}</div>
-                  <div className="reservation-night">&nbsp; / night</div>
-                </div>
-              </div>
-              <div className="property-full-review">
-                <i className="review-star fas fa-star"></i>
-                <div className="review-rating">{parseFloat(property.average_rating).toFixed(2)}</div>
-              </div>
-            </div>
+            {reservationTop}
             <div className="calendar-guest">
               <div className="property-full-calendar">
                 <div className="property-full-check-in">
                   <h3>
                     <div>CHECK-IN</div>
-                    <input onChange={this.handleForm("checkin_date")} type="date" placeholder="Add dates" />
+                    <input onChange={this.handleCheckIn("checkin_date")} type="date" placeholder="Add dates" />
                   </h3>
                 </div>
                 <div className="property-full-check-out">
                   <h3>
                     <div>CHECKOUT</div>
-                    <input onChange={this.handleForm("checkout_date")} type="date" placeholder="Add dates"  />
+                    <input onChange={this.handleCheckOut("checkout_date")} type="date" placeholder="Add dates"  />
                   </h3>
                 </div>
               </div>

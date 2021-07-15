@@ -8,10 +8,8 @@ class TripView extends React.Component {
   }
 
   componentDidMount() {
-
-    this.props.fetchAllProperties().then(() => this.setState({ loading: false }))
-    
     this.props.fetchUser(this.props.currentUser.id)
+    this.props.fetchAllProperties().then(() => this.setState({ loading: false }))
   }
 
 

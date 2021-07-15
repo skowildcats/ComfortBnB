@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import PropertyMovingReservation from './property_moving_reservation';
 import PropertyMap from './property_map';
+import { clearError } from '../../actions/error_actions';
 
 class PropertyDetail extends React.Component {
   componentDidMount() {
@@ -30,7 +31,7 @@ class PropertyDetail extends React.Component {
 
 
   render() {
-    const { currentUser, property, createReservation } = this.props
+    const { currentUser, property, createReservation, errors, addError, clearErrors} = this.props
     this.scrollFunc()  
     let names = [ "Adam", "Alex", "Aaron", "Ben", "Carl", "Dan", "David", "Edward", "Fred", "Frank", "George", "Hal", "Hank", "Ike", "John", "Jack", "Joe", "Larry", "Monte", "Matthew", "Mark", "Nathan", "Otto", "Paul", "Peter", "Roger", "Roger", "Steve", "Thomas", "Tim", "Ty", "Victor", "Walter"]
     
@@ -103,7 +104,7 @@ class PropertyDetail extends React.Component {
               </div>
           </div>
 
-          <PropertyMovingReservation property={property} currentUser={currentUser} createReservation={createReservation} />
+          <PropertyMovingReservation property={property} currentUser={currentUser} createReservation={createReservation} errors={errors} addError={addError} clearErrors={clearErrors}/>
         </div>
         <div className="property-review">
           <div className="review-header">

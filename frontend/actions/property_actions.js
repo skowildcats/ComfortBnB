@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/property_util'
 
+
 export const RECEIVE_PROPERTIES = 'RECEIVE_PROPERTIES';
 export const RECEIVE_PROPERTY = 'RECEIVE_PROPERTY';
 // export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
