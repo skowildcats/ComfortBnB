@@ -3,3 +3,12 @@
 # ComfortBnB
 
 ComfortBnB is a full stack clone of AirBnB where users can browse for listings, view listings and create reservations. [Live Link](https://comfortbnb.herokuapp.com/?#/)
+
+# Technologies
+
+# Features
+
+## User Auth
+
+## Listings
+
