@@ -92,7 +92,7 @@ These features are designed to enhance UI/UX
 
 ### Nav-Bar Render
 
-<img src="https://media.giphy.com/media/bmRCZxQ6fC4yRN748v/giphy.gif" width="800" height="550" />
+<img src="https://media.giphy.com/media/bmRCZxQ6fC4yRN748v/giphy.gif" width="1000" height="625" />
 
 This was done using scroll event listeners and conditionally rendering depending on scroll distance
 
@@ -129,7 +129,7 @@ scrollFunc() {
 
 ### Moving Component on Listing Detail Page
 
-<img src="https://media.giphy.com/media/X7bOLJBFvHeJaOyiAG/giphy.gif" width="800" height="550" />
+<img src="https://media.giphy.com/media/X7bOLJBFvHeJaOyiAG/giphy.gif" width="1000" height="550" />
 
 This was done using scroll event listeners and change display and translate property
 
