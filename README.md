@@ -6,7 +6,7 @@ ComfortBnB is a full stack clone of AirBnB where users can browse for listings, 
 
 # Technologies
 
-ComfortBnB is built using React as the frontend, HTML and CSS for styling. Ruby on rails combined with PostgreSQL establishes the backend for all data management needs. Additionally, google maps API was used to render maps and markers with a focus on enhancing user experience.
+ComfortBnB is built using React as the frontend, HTML and CSS for styling. Ruby on rails combined with PostgreSQL establishes the backend for all data management needs. Additionally, google maps API was used to render maps and markers. Lastly, the website was created with the intention of creatng a responsive website and focus on UI/UX.
 
 # Features
 
