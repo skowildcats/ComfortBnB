@@ -12,5 +12,10 @@ ComfortBnB is built using React as the frontend, HTML and CSS for styling. Ruby 
 
 ## Browse Page Image Slideshow
 
-## Select Javascript Features
+Each listing on the browse page has a image slideshow attached to it that allows the user to interact and scroll through listing images.
+<img src="https://media.giphy.com/media/7uT5TQXSPlJFmeyzZ9/giphy.gif" width="800" height="550" />
+
+
+
+## Select Javascript/Jquery Features
 
