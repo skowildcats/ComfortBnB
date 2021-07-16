@@ -11,6 +11,7 @@ class TripViewProperty extends React.Component {
   }
 
   redirectBrowse() {
+    this.props.updateFilter('location', this.props.property.city)
     this.props.history.push(`/browse/${this.props.property.id}`)
   }
 

@@ -29,7 +29,7 @@ class TripView extends React.Component {
 
 
   render() {
-    const {currentUser, properties, destroyReservation} = this.props
+    const {currentUser, properties, destroyReservation, updateFilter} = this.props
     
     if (this.state.loading) {
       return null
@@ -76,7 +76,7 @@ class TripView extends React.Component {
               {sortedReservations.map((reservation) => {
                 if (new Date() > new Date(reservation.checkout_date)) {
                   return (
-                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} type="past"/>
+                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} updateFilter={updateFilter} type="past"/>
                   )
                 }
               })}
@@ -90,11 +90,11 @@ class TripView extends React.Component {
               {sortedReservations.map((reservation) => {
                 if (new Date() <= new Date(reservation.checkin_date)) {
                   return (
-                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} type="upcoming"/>
+                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} updateFilter={updateFilter} type="upcoming"/>
                   )
                 } else if (new Date() >= new Date(reservation.checkin_date) && new Date() <= new Date(reservation.checkout_date)) {
                   return (
-                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} type="upcoming"/>
+                    <TripViewProperty modifyReservation={this.modifyReservation} property={properties[reservation.property_id]} checkIn={reservation.checkin_date} checkOut={reservation.checkout_date} key={reservation.id} reservationId={reservation.id} destroyReservation={destroyReservation} updateFilter={updateFilter} type="upcoming"/>
                   )
                 }
               })}
