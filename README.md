@@ -1,5 +1,5 @@
+<img width="145" alt="Screen_Shot_2021-07-16_at_8 11 59_AM-removebg-preview" src="https://user-images.githubusercontent.com/82133872/125953582-4947e493-9460-40d6-87e9-3c9313beb767.png">
 # ComfortBnB
-<img width="145" alt="Screen Shot 2021-07-16 at 8 11 59 AM" src="https://user-images.githubusercontent.com/82133872/125953351-36dee93d-620a-4f1c-be85-03c07ef503f5.png">
 
 
 This README would normally document whatever steps are necessary to get the
