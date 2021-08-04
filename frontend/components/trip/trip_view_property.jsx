@@ -15,17 +15,6 @@ class TripViewProperty extends React.Component {
     this.props.history.push(`/browse/${this.props.property.id}`)
   }
 
-  // modalEvent(e) {
-  //   if (!e.target.closest(".reservation-modal-form")) {
-  //     document.getElementById('reservation-session-modal').style.display = 'none'
-  //     document.querySelector('.reservation-modal-screen').removeEventListener("click", this.modalEvent.bind(this))
-  //   }
-  // }
-
-  // closeModal(e) {
-  //   document.getElementById('reservation-session-modal').style.display = 'none'
-  // }
-
   render() {
     const {property, checkIn, checkOut} = this.props
 
