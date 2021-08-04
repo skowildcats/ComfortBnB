@@ -57,7 +57,6 @@
 }
 
 .property-full-description {
-  height: 730px;
   width: 100%;
   display: flex;
 }
@@ -193,17 +192,28 @@
 }
 
 .property-full-paragraph {  
-  margin-top: 30px;
-  border-bottom: 1px solid lightgray
+  margin-top: 20px;
+  border-bottom: 1px solid lightgray;
 }
 
 
 .property-detail-amenities {
-  margin-top: 30px;
+  margin-top: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
 }
 
 .property-detail-amenities h2 {
   margin-bottom: 30px;
+}
+
+.show-calendar-container {
+  margin-top: 20px;
+  padding-bottom: 20px;
+
+  > div {
+    margin-left: auto; margin-right: auto;
+  }
 }
 
 .property-full-review {
@@ -224,8 +234,6 @@
   padding: 0;
 }
 
-
-
 .calendar-guest h3 {
   font-size: 12px;
   padding-left: 10px;
@@ -234,7 +242,6 @@
 .paragraph-text {
   font-size: 16px;
   line-height: 25px;
-  margin-bottom: 25px;
 }
 
 .amenity-icons {
