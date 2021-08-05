@@ -1,4 +1,5 @@
 import React from 'react';
+let moment = require('moment')
 import { withRouter } from 'react-router-dom';
 import 'react-dates/initialize';
 import { DayPickerRangeController } from 'react-dates';
@@ -60,18 +61,6 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <div className="date-picker-container">
-          <DayPickerRangeController 
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
-            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-            focusedInput={this.state.focusedInputLeftCol}
-            onFocusChange={this.onFocusChange}
-            numberOfMonths={2}
-            // isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}
-            hideKeyboardShortcutsPanel={true}
-          />
-        </div>
         <form onSubmit={this.handleSubmit.bind(this)} className="search-bar">
           <div onClick={this.toggleDropdown.bind(this)} className="search-location">
             <h3> Location
@@ -80,15 +69,15 @@ class SearchBar extends React.Component {
             </h3>
           </div>
           <div className="search-check-in">
-            <h3>Check in
+            <h3 id="tmp">Check in
               <br />
-              <input onChange={this.handleChange('checkIn')} type="date" placeholder="Add dates" />
+              <input id="checkin-date" onChange={this.handleChange('checkIn')} type="text" placeholder={this.state.startDate ? moment(this.state.startDate).format("MMM Do") : "Add dates"} readOnly/>
             </h3>
           </div>
           <div className="search-check-out">
             <h3>Check out
               <br />
-              <input onChange={this.handleChange('checkOut')} type="date" placeholder="Add dates" />
+              <input id="checkout-date" onChange={this.handleChange('checkOut')} type="text" placeholder={this.state.endDate ? moment(this.state.endDate).format("MMM Do") : "Add dates"} readOnly/>
             </h3>
           </div>
           <div className="search-guests">
@@ -104,6 +93,22 @@ class SearchBar extends React.Component {
         <div className="search-location-city" onClick={this.browseLocation.bind(this, "Chicago")} >Chicago</div>
         <div className="search-location-city" onClick={this.browseLocation.bind(this, "San Francisco")} >San Francisco</div>
         <div className="search-location-city-la" onClick={this.browseLocation.bind(this, "Los Angeles")} >Los Angeles</div>
+      </div>
+      <div className="date-picker-container">
+        <DayPickerRangeController 
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+          onDatesChange={({ startDate, endDate }) => {
+            startDate.format("MMM Do YY")
+            console.log(startDate)
+            this.setState({ startDate, endDate })
+          }}
+          focusedInput={this.state.focusedInputLeftCol}
+          onFocusChange={this.onFocusChange}
+          numberOfMonths={2}
+          // isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}
+          hideKeyboardShortcutsPanel={true}
+        />
       </div>
     </div>
     )
