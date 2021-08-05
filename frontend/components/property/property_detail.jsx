@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom'
 import PropertyMovingReservation from './property_moving_reservation';
 import PropertyMap from './property_map';
 import { clearError } from '../../actions/error_actions';
-import 'react-dates/initialize';
-import { DayPickerRangeController } from 'react-dates';
-import { START_DATE, END_DATE } from 'react-dates/src/constants';
 
 class PropertyDetail extends React.Component {
   componentDidMount() {
@@ -14,36 +11,22 @@ class PropertyDetail extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {loading: true,
-        startDate: null,
-        endDate: null,
-        focusedInput: null,
-        focusedInputLeftCol: START_DATE,
-        guestsInputBorderFocused: false,
-        redirectToSearchIdx: false
-    }
-    this.onFocusChange = this.onFocusChange.bind(this);
+    this.state = {loading: true}
   }
 
   scrollFunc() {
     window.onscroll = function () {
-      if ($(window).scrollTop() >= 480 && $(window).scrollTop() <= 1215) {
+      if ($(window).scrollTop() >= 480 && $(window).scrollTop() <= 895) {
         $(".moving-reservation").css("position", "fixed")
         $(".moving-reservation").css("transform", "translateY(-175%)")
-      } else if ($(window).scrollTop() >= 1215) {
+      } else if ($(window).scrollTop() >= 895) {
         $(".moving-reservation").css("position", "absolute")
-        $(".moving-reservation").css("transform", "translateY(267%)")
+        $(".moving-reservation").css("transform", "translateY(150%)")
       } else {
         $(".moving-reservation").css("position", "absolute")
         $(".moving-reservation").css("transform", "translateY(0%)")
       }
     }
-  }
-
-  onFocusChange() {
-    this.setState({
-        focusedInputLeftCol: this.state.focusedInputLeftCol === START_DATE ? END_DATE : START_DATE
-    });
   }
 
 
@@ -93,7 +76,7 @@ class PropertyDetail extends React.Component {
               <div className="property-full-paragraph">
                 <h2 className="paragraph-header">All about {property.description}</h2>
                 <p className="paragraph-text">
-                  Retreat to this getaway and enjoy the best that the city has to offer.
+                  Retreat to this getaway and enjoys the best that the city has to offer.
                   Located in one of the city's most eclectic neighborhoods, 
                   this is a lovely space to unwind and relax after a busy day whether it is work or play.
                   Awake refreshed and ready for a day exploring the city via this clean, sunny apartment with impressive views.
@@ -118,21 +101,6 @@ class PropertyDetail extends React.Component {
                   <div><i className="far fa-snowflake"></i> Air conditioning</div>
                 </div>
                 <div className="show-all-amenities">Show all amenities</div>
-              </div>
-              <div className="show-calendar-container">
-                <h2>
-                  Select check-in date
-                </h2>
-                <DayPickerRangeController 
-                  startDate={this.state.startDate}
-                  endDate={this.state.endDate}
-                  onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-                  focusedInput={this.state.focusedInputLeftCol}
-                  onFocusChange={this.onFocusChange}
-                  numberOfMonths={2}
-                  // isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}
-                  hideKeyboardShortcutsPanel={true}
-                />
               </div>
           </div>
 
