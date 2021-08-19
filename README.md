@@ -131,7 +131,7 @@ scrollFunc() {
 
 <img src="https://media.giphy.com/media/X7bOLJBFvHeJaOyiAG/giphy.gif" width="1000" height="550" />
 
-This was done using scroll event listeners and change display and translate property
+This was done using scroll event listeners and changing display and translate property
 
 ```
 scrollFunc() {
